@@ -32,8 +32,15 @@ para os documentos"*. Quando entrar, entra como uma seção nova, não como um q
 | bloco | para quem | endereço |
 |---|---|---|
 | Planifica Fácil | **Equipe da unidade** | `planifica.guiaaps.com.br` |
+| SIGSS | Toda a equipe | `c3102prd.cloudmv.com.br` |
 | AvaliaACS | Enfermeiros e coordenação | `avalia-acs.web.app` |
 | Guia Clínico APS | Enfermeiros e médicos | `guiaclinicoaps.github.io` |
+
+**O SIGSS entrou em 13/09/2026, a pedido dele.** É o único bloco que não é sistema nosso — é o
+sistema da Secretaria (cloudMV), onde a equipe passa o dia e onde as agentes registram as visitas.
+Fica em segundo lugar, logo depois do Planifica: por frequência de uso ele seria o primeiro, mas a
+porta é do Guia Saúde e abre pelo que é dele. O endereço não é segredo (está no histórico do
+navegador de todo mundo do posto), e o link leva direto à tela de login.
 
 **"Equipe da unidade" e não "ESF Rosas"**: em duas semanas são doze postos, e a porta não
 pode envelhecer junto.
