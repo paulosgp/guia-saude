@@ -63,15 +63,10 @@ h2{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:600;font-size
 .app:hover,.app:focus-visible{transform:translateY(-2px);border-color:var(--verde)}
 .app:focus-visible{outline:3px solid var(--verde);outline-offset:3px}
 .topo{display:flex;align-items:center;gap:13px}
-/* Os quatro ícones têm o mesmo tamanho e o mesmo formato de quadrado arredondado: os três
-   sistemas nossos entram com o logotipo de verdade, e o SIGSS — que é sistema de terceiro e
-   não tem arquivo aqui — ganha um quadrado desenhado igual. Sem isso a fileira fica com um
-   item fora de esquadro. O verde do quadrado é fixo nos dois temas (o token clareia no
-   escuro e o desenho branco sumiria em cima dele). */
+/* Os quatro ícones têm o mesmo tamanho e o mesmo formato: cada um é o logotipo do próprio
+   sistema, e o arredondamento é nosso — as artes vêm em quadrado de canto vivo, que ao lado de
+   cartões arredondados fica duro. */
 .topo img{width:34px;height:34px;flex:0 0 auto;border-radius:8px;object-fit:contain;display:block}
-.tile{width:34px;height:34px;flex:0 0 auto;border-radius:8px;background:#0e8c4a;
-  display:flex;align-items:center;justify-content:center}
-.tile svg{width:21px;height:21px;color:#fff}
 .nome{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:700;font-size:21px;letter-spacing:-.01em}
 .oque{color:var(--muted);font-size:16px;margin:0;flex:1}
 .quem{display:inline-flex;align-self:flex-start;background:var(--chip);color:var(--chip-ink);
@@ -113,11 +108,7 @@ footer b{color:var(--ink)}
 
     <a class="app" href="https://c3102prd.cloudmv.com.br/sigss/login" target="_blank" rel="noopener">
       <div class="topo">
-        <span class="tile" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M12 9v5M9.5 11.5h5"/>
-          </svg>
-        </span>
+        <img src="logo-sigss.png" alt="" width="34" height="34">
         <span class="nome">SIGSS</span>
       </div>
       <p class="oque">O sistema da Secretaria: cadastro do usuário, agenda, atendimento e o registro das visitas das agentes.</p>

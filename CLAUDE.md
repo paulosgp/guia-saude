@@ -50,22 +50,27 @@ pode envelhecer junto.
 - **As cores saem do logotipo da Secretaria** — o verde do "SAÚDE" e o azul do "SECRETARIA
   DE". Nenhuma paleta inventada: é a identidade que a equipe já reconhece no papel
   timbrado. O arquivo é o mesmo `brasao.png` que as skills de documento usam.
-- **Cada bloco mostra o logotipo do app, e o SIGSS é a exceção que define o formato.**
-  Pedido do Paulo em 13/09/2026 ("coloque a logo de cada app"). Os três sistemas nossos entram
-  com o arquivo de verdade, copiado da pasta de cada um — `logo-planifica.png` (o ícone do PWA,
-  `Planifica Facil/public/icons/icon-192.png`), `logo-avaliaacs.svg` (`AvaliaACS/public/icon.svg`)
-  e `logo-guiaclinico.png` (`GuiaClinico/_logo/icone_96.png`). **O SIGSS não tem logotipo aqui**:
-  é sistema de terceiro (cloudMV), e baixar a marca deles para hospedar na nossa página é coisa
-  que não se faz sem perguntar. Então ele ganhou um quadrado desenhado, no verde da Secretaria,
-  com o mesmo tamanho e o mesmo arredondamento dos outros três — a fileira fica alinhada em vez
-  de ter um ícone de linha no meio de três ícones de app. **Se um dia o logotipo do SIGSS entrar,
-  é trocar o `<span class="tile">` por um `<img>` e nada mais muda.**
-- **O verde do quadrado do SIGSS é escrito à mão (`#0e8c4a`), não o token `--verde`.** O token
-  clareia no tema escuro (para funcionar como texto sobre fundo escuro), e o desenho branco por
-  cima dele ficaria ilegível. Quadrado cheio pede cor fixa nos dois temas.
+- **Cada bloco mostra o logotipo do próprio sistema** (pedido do Paulo em 13/09/2026, "coloque a
+  logo de cada app"). Os três nossos saíram da pasta de cada um — `logo-planifica.png` (o ícone do
+  PWA, `Planifica Facil/public/icons/icon-192.png`), `logo-avaliaacs.svg` (`AvaliaACS/public/icon.svg`)
+  e `logo-guiaclinico.png` (`GuiaClinico/_logo/icone_96.png`).
+- **O do SIGSS veio DELE, e é por isso que ele está aqui.** Na primeira versão o SIGSS ficou com um
+  quadrado verde desenhado, porque é sistema de terceiro (cloudMV) e baixar a marca de outra empresa
+  para hospedar na nossa página não é coisa que se faça sem perguntar. Ele viu a página e mandou o
+  arquivo ("use este para o siggs") — então a autorização é dele, e o desenho saiu junto com a classe
+  `.tile`, que existia só para aquele caso.
+- **A arte do SIGSS chegou como foto retangular (492×416) e foi RECORTADA**, não esticada: um
+  quadrado de 320 px centrado na marca (que ocupa x 153–415, y 76–333), reduzido a 128 px — três
+  vezes os 34 px da tela, que cobre qualquer densidade de celular. O recorte foi feito com
+  `System.Drawing` pelo PowerShell (não há biblioteca de imagem instalada nesta máquina) e o fundo
+  quase-preto foi **achatado na cor exata** antes de salvar: o ruído de JPEG no fundo fazia o PNG
+  sair com 82 KB: achatado, são 13 KB. Se a arte precisar ser refeita, os números do recorte estão
+  aqui.
 - **Os logotipos são CÓPIAS, não links para a pasta do outro app.** Cada app é um repositório
   próprio, e o Pages só serve o que está neste. Trocar a arte de um deles não atualiza esta página
   sozinho — é copiar o arquivo de novo.
+- **O arredondamento de 8 px é nosso, não das artes.** As quatro chegam em quadrado de canto vivo;
+  ao lado de cartões arredondados isso fica duro. É a única coisa que o CSS faz com elas.
 - **O cartão inteiro é clicável**, não só o "Abrir": no celular, isso é a diferença entre
   acertar e errar o toque.
 - **O endereço aparece por extenso** embaixo de cada bloco, porque quem divulga precisa
