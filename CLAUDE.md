@@ -23,9 +23,16 @@ dele, o Planifica o dele, e o Guia Clínico não pede nenhum, por decisão antig
 ("sem cadastro nem chave"). Os rótulos **organizam, não trancam**: a página é pública, e
 quem digitar o endereço abre. Quem tranca é cada app.
 
-**Não tem** a seção de documentos da SMS (protocolos, POPs, normas e rotinas). Ela foi
-conversada e ele deixou para depois: *"por enquanto não precisa colocar o espaço reservado
-para os documentos"*. Quando entrar, entra como uma seção nova, não como um quarto bloco.
+**Tem, desde 13/09/2026, a seção "Documentos"**, com um único cartão: o **Documentos
+Institucionais** (`documentos.guiaaps.com.br`), a busca nos protocolos, POPs, normas e
+rotinas, regimentos e planejamentos assinados. Ela entrou como **seção nova** (um `<h2>` e uma
+grade própria), e não como quinto bloco em "Sistemas", porque foi assim que ele decidiu quando
+deixou o espaço para depois: documento não é sistema onde a equipe trabalha, é o que a equipe
+consulta. O ícone `logo-documentos.svg` é nosso (folha com carimbo e lupa, nas cores do
+logotipo) — o app nasceu no mesmo dia e não tinha marca; o mesmo arquivo é o favicon dele
+(`Documentos Institucionais/src/app/icon.svg`). Rótulo "Toda a equipe": o app não pede senha, só
+o posto da pessoa. **Enquanto o DNS e a Vercel não estiverem configurados pelo Paulo**, o link
+leva a lugar nenhum — o cartão foi posto antes por pedido dele.
 
 ## Os três blocos, e por que cada rótulo está escrito assim
 
