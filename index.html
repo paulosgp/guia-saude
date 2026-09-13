@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Os sistemas da Atenção Primária de São Mateus do Sul, num lugar só: Planifica Fácil, AvaliaACS e Guia Clínico APS.">
+<meta name="description" content="Os sistemas da Atenção Primária de São Mateus do Sul, num lugar só: Planifica Fácil, SIGSS, AvaliaACS e Guia Clínico APS.">
 <meta name="theme-color" content="#0e8c4a">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%230e8c4a%27/%3E%3Cpath d=%27M16 8v16M8 16h16%27 stroke=%27white%27 stroke-width=%274.5%27 stroke-linecap=%27round%27/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
@@ -62,8 +62,16 @@ h2{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:600;font-size
   transition:transform .14s ease,border-color .14s ease}
 .app:hover,.app:focus-visible{transform:translateY(-2px);border-color:var(--verde)}
 .app:focus-visible{outline:3px solid var(--verde);outline-offset:3px}
-.topo{display:flex;align-items:center;gap:12px}
-.topo svg{width:30px;height:30px;flex:0 0 auto;color:var(--verde)}
+.topo{display:flex;align-items:center;gap:13px}
+/* Os quatro ícones têm o mesmo tamanho e o mesmo formato de quadrado arredondado: os três
+   sistemas nossos entram com o logotipo de verdade, e o SIGSS — que é sistema de terceiro e
+   não tem arquivo aqui — ganha um quadrado desenhado igual. Sem isso a fileira fica com um
+   item fora de esquadro. O verde do quadrado é fixo nos dois temas (o token clareia no
+   escuro e o desenho branco sumiria em cima dele). */
+.topo img{width:34px;height:34px;flex:0 0 auto;border-radius:8px;object-fit:contain;display:block}
+.tile{width:34px;height:34px;flex:0 0 auto;border-radius:8px;background:#0e8c4a;
+  display:flex;align-items:center;justify-content:center}
+.tile svg{width:21px;height:21px;color:#fff}
 .nome{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:700;font-size:21px;letter-spacing:-.01em}
 .oque{color:var(--muted);font-size:16px;margin:0;flex:1}
 .quem{display:inline-flex;align-self:flex-start;background:var(--chip);color:var(--chip-ink);
@@ -92,10 +100,7 @@ footer b{color:var(--ink)}
 
     <a class="app" href="https://planifica.guiaaps.com.br" target="_blank" rel="noopener">
       <div class="topo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/>
-          <path d="M9 3v2h6V3"/><path d="M9 11h6M9 15h4"/>
-        </svg>
+        <img src="logo-planifica.png" alt="" width="34" height="34">
         <span class="nome">Planifica Fácil</span>
       </div>
       <p class="oque">O acompanhamento de cada paciente da unidade: consultas, visitas, rastreios e as linhas de cuidado.</p>
@@ -108,9 +113,11 @@ footer b{color:var(--ink)}
 
     <a class="app" href="https://c3102prd.cloudmv.com.br/sigss/login" target="_blank" rel="noopener">
       <div class="topo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M12 9v5M9.5 11.5h5"/>
-        </svg>
+        <span class="tile" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 21h18M5 21V7l7-4 7 4v14"/><path d="M12 9v5M9.5 11.5h5"/>
+          </svg>
+        </span>
         <span class="nome">SIGSS</span>
       </div>
       <p class="oque">O sistema da Secretaria: cadastro do usuário, agenda, atendimento e o registro das visitas das agentes.</p>
@@ -123,9 +130,7 @@ footer b{color:var(--ink)}
 
     <a class="app" href="https://avalia-acs.web.app" target="_blank" rel="noopener">
       <div class="topo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M4 20V10M10 20V4M16 20v-6M22 20H2"/>
-        </svg>
+        <img src="logo-avaliaacs.svg" alt="" width="34" height="34">
         <span class="nome">AvaliaACS</span>
       </div>
       <p class="oque">O lançamento das visitas das agentes comunitárias e a avaliação mensal do desempenho.</p>
@@ -138,9 +143,7 @@ footer b{color:var(--ink)}
 
     <a class="app" href="https://guiaclinicoaps.github.io/" target="_blank" rel="noopener">
       <div class="topo">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M5 4a2 2 0 0 1 2-2h11v18H7a2 2 0 0 0-2 2z"/><path d="M9 7h6M9 11h6"/>
-        </svg>
+        <img src="logo-guiaclinico.png" alt="" width="34" height="34">
         <span class="nome">Guia Clínico APS</span>
       </div>
       <p class="oque">Protocolos e condutas da Atenção Primária para consultar durante o atendimento.</p>

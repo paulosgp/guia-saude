@@ -50,6 +50,22 @@ pode envelhecer junto.
 - **As cores saem do logotipo da Secretaria** — o verde do "SAÚDE" e o azul do "SECRETARIA
   DE". Nenhuma paleta inventada: é a identidade que a equipe já reconhece no papel
   timbrado. O arquivo é o mesmo `brasao.png` que as skills de documento usam.
+- **Cada bloco mostra o logotipo do app, e o SIGSS é a exceção que define o formato.**
+  Pedido do Paulo em 13/09/2026 ("coloque a logo de cada app"). Os três sistemas nossos entram
+  com o arquivo de verdade, copiado da pasta de cada um — `logo-planifica.png` (o ícone do PWA,
+  `Planifica Facil/public/icons/icon-192.png`), `logo-avaliaacs.svg` (`AvaliaACS/public/icon.svg`)
+  e `logo-guiaclinico.png` (`GuiaClinico/_logo/icone_96.png`). **O SIGSS não tem logotipo aqui**:
+  é sistema de terceiro (cloudMV), e baixar a marca deles para hospedar na nossa página é coisa
+  que não se faz sem perguntar. Então ele ganhou um quadrado desenhado, no verde da Secretaria,
+  com o mesmo tamanho e o mesmo arredondamento dos outros três — a fileira fica alinhada em vez
+  de ter um ícone de linha no meio de três ícones de app. **Se um dia o logotipo do SIGSS entrar,
+  é trocar o `<span class="tile">` por um `<img>` e nada mais muda.**
+- **O verde do quadrado do SIGSS é escrito à mão (`#0e8c4a`), não o token `--verde`.** O token
+  clareia no tema escuro (para funcionar como texto sobre fundo escuro), e o desenho branco por
+  cima dele ficaria ilegível. Quadrado cheio pede cor fixa nos dois temas.
+- **Os logotipos são CÓPIAS, não links para a pasta do outro app.** Cada app é um repositório
+  próprio, e o Pages só serve o que está neste. Trocar a arte de um deles não atualiza esta página
+  sozinho — é copiar o arquivo de novo.
 - **O cartão inteiro é clicável**, não só o "Abrir": no celular, isso é a diferença entre
   acertar e errar o toque.
 - **O endereço aparece por extenso** embaixo de cada bloco, porque quem divulga precisa
