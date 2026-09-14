@@ -113,6 +113,15 @@ h2{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:600;font-size
 
 footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:14.5px}
 footer b{color:var(--ink)}
+/* "Fale com a coordenação" não é acionável no celular, que é onde a pessoa está quando trava.
+   Vira um botão de WhatsApp, com o número por extenso do lado: quem estiver no computador ainda
+   consegue anotar e ligar. Sem o logotipo do WhatsApp — a palavra já identifica, e a marca é de
+   terceiro. */
+.zap{display:inline-flex;align-items:center;gap:8px;margin-top:10px;background:var(--chip);
+  color:var(--chip-ink);font-weight:600;font-size:15px;text-decoration:none;
+  padding:8px 14px;border-radius:999px;border:1px solid transparent;transition:border-color .14s ease}
+.zap:hover,.zap:focus-visible{border-color:var(--verde)}
+.zap svg{width:17px;height:17px;flex:0 0 auto}
 @media (prefers-reduced-motion:reduce){.app{transition:none}.app:hover{transform:none}}
 </style>
 
@@ -228,7 +237,11 @@ footer b{color:var(--ink)}
 
   <footer>
     <b>Secretaria Municipal da Saúde de São Mateus do Sul — Paraná.</b><br>
-    Cada sistema pede o acesso dele. Problemas para entrar, fale com a coordenação da Atenção Primária.
+    Cada sistema pede o acesso dele. Problemas para entrar, fale com a coordenação da Atenção Primária.<br>
+    <a class="zap" href="https://wa.me/5542988724354" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      WhatsApp (42) 98872-4354
+    </a>
   </footer>
 </main>
 
