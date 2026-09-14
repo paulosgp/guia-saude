@@ -40,10 +40,13 @@ body{background:var(--bg);color:var(--ink);margin:0;padding:0;
   font:17px/1.55 "Source Sans 3","Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
 main{max-width:980px;margin:0 auto;padding:40px 22px 72px}
 
-/* O logotipo já diz "Secretaria de Saúde · São Mateus do Sul": no escuro ele ganha uma placa
-   branca, senão o azul do texto some no fundo. */
-.marca{display:inline-block;line-height:0;margin-bottom:26px}
-.marca img{width:min(340px,72vw);height:auto}
+/* Duas marcas no alto, na mesma ordem do papel timbrado: a Prefeitura (o guarda-chuva) e a
+   Secretaria de Saúde (de quem é esta porta). Casadas pela ALTURA, e não pela largura: as duas
+   artes têm proporções diferentes (345×100 e 673×202), e é o brasão de cada uma que precisa
+   bater de tamanho. No escuro as duas dividem a mesma placa branca — são coloridas sobre fundo
+   transparente, e sem a placa o azul dos textos some. */
+.marca{display:inline-flex;align-items:center;flex-wrap:wrap;gap:10px 24px;line-height:0;margin-bottom:26px}
+.marca img{height:clamp(40px,8.6vw,56px);width:auto;display:block}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .marca{background:#fff;padding:12px 16px;border-radius:14px}}
 :root[data-theme="dark"] .marca{background:#fff;padding:12px 16px;border-radius:14px}
 
@@ -63,10 +66,14 @@ h2{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:600;font-size
 .app:hover,.app:focus-visible{transform:translateY(-2px);border-color:var(--verde)}
 .app:focus-visible{outline:3px solid var(--verde);outline-offset:3px}
 .topo{display:flex;align-items:center;gap:13px}
-/* Os quatro ícones têm o mesmo tamanho e o mesmo formato: cada um é o logotipo do próprio
+/* Todos os ícones têm o mesmo tamanho e o mesmo formato: cada um é o logotipo do próprio
    sistema, e o arredondamento é nosso — as artes vêm em quadrado de canto vivo, que ao lado de
    cartões arredondados fica duro. */
 .topo img{width:34px;height:34px;flex:0 0 auto;border-radius:8px;object-fit:contain;display:block}
+/* O "oxy" é uma marca DEITADA, não um ícone quadrado: espremido nos 34 px dos outros ele sairia
+   com 15 px de altura e ninguém leria. Ganha um espaço mais largo, e nenhum arredondamento —
+   não há caixa nenhuma para arredondar. */
+.topo img.marca-oxy{width:64px;border-radius:0}
 .nome{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:700;font-size:21px;letter-spacing:-.01em}
 .oque{color:var(--muted);font-size:16px;margin:0;flex:1}
 .quem{display:inline-flex;align-self:flex-start;background:var(--chip);color:var(--chip-ink);
@@ -84,7 +91,10 @@ footer b{color:var(--ink)}
 </head>
 <body>
 <main>
-  <span class="marca"><img src="logo-sms.png" alt="Secretaria de Saúde — São Mateus do Sul"></span>
+  <span class="marca">
+    <img src="logo-prefeitura.png" alt="Prefeitura de São Mateus do Sul" width="345" height="100">
+    <img src="logo-sms.png" alt="Secretaria de Saúde — São Mateus do Sul" width="673" height="202">
+  </span>
 
   <h1>Guia <span>Saúde</span></h1>
   <div class="linha"></div>
@@ -170,7 +180,7 @@ footer b{color:var(--ink)}
 
     <a class="app" href="https://saomateusdosul.oxy.elotech.com.br/assinatura-digital/" target="_blank" rel="noopener">
       <div class="topo">
-        <img src="logo-assinatura.svg" alt="" width="34" height="34">
+        <img class="marca-oxy" src="logo-oxy.svg" alt="Oxy" width="64" height="34">
         <span class="nome">Assinatura Digital</span>
       </div>
       <p class="oque">Onde os documentos da Prefeitura são assinados eletronicamente: os envelopes que chegam para a sua assinatura ficam aqui.</p>
@@ -183,7 +193,7 @@ footer b{color:var(--ink)}
 
     <a class="app" href="https://saomateusdosul.oxy.elotech.com.br/processo-digital/" target="_blank" rel="noopener">
       <div class="topo">
-        <img src="logo-processo.svg" alt="" width="34" height="34">
+        <img class="marca-oxy" src="logo-oxy.svg" alt="Oxy" width="64" height="34">
         <span class="nome">Processo Digital</span>
       </div>
       <p class="oque">O trâmite dos processos administrativos: abrir, acompanhar e despachar o que chega ao setor.</p>

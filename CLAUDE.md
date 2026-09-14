@@ -81,6 +81,13 @@ pode envelhecer junto.
 - **As cores saem do logotipo da Secretaria** — o verde do "SAÚDE" e o azul do "SECRETARIA
   DE". Nenhuma paleta inventada: é a identidade que a equipe já reconhece no papel
   timbrado. O arquivo é o mesmo `brasao.png` que as skills de documento usam.
+- **São DUAS marcas no alto, desde 13/09/2026** (pedido do Paulo): a da Prefeitura
+  (`logo-prefeitura.png`, o `img/logo_mobile.png` do site oficial `saomateusdosul.pr.gov.br`) e a
+  da Secretaria de Saúde, nessa ordem — a mesma do papel timbrado, o guarda-chuva antes de quem é
+  a porta. **Casadas pela ALTURA e não pela largura**: as proporções são diferentes (345×100 e
+  673×202), e o que precisa bater de tamanho é o brasão dentro de cada uma. Se fossem casadas pela
+  largura, o brasão da Prefeitura sairia visivelmente menor que o da Saúde ao lado. As duas
+  dividem a mesma placa branca no modo escuro.
 - **Cada bloco mostra o logotipo do próprio sistema** (pedido do Paulo em 13/09/2026, "coloque a
   logo de cada app"). Os três nossos saíram da pasta de cada um — `logo-planifica.png` (o ícone do
   PWA, `Planifica Facil/public/icons/icon-192.png`), `logo-avaliaacs.svg` (`AvaliaACS/public/icon.svg`)
@@ -97,11 +104,20 @@ pode envelhecer junto.
   quase-preto foi **achatado na cor exata** antes de salvar: o ruído de JPEG no fundo fazia o PNG
   sair com 82 KB: achatado, são 13 KB. Se a arte precisar ser refeita, os números do recorte estão
   aqui.
-- **Os ícones da Assinatura e do Processo Digital são NOSSOS** (`logo-assinatura.svg`,
-  `logo-processo.svg`), desenhados como o do Documentos: a folha com a rubrica e as folhas com a
-  seta do trâmite. Não baixamos a marca da Elotech — é empresa de fora, e hospedar a marca dela
-  aqui sem perguntar não é coisa que se faça (mesma razão que segurou o ícone do SIGSS até o Paulo
-  mandar o arquivo). Se um dia ele mandar as marcas oficiais, é só trocar os dois arquivos.
+- **A Assinatura e o Processo Digital usam a MESMA marca, o "oxy" oficial** (`logo-oxy.svg`), e
+  isso não é descuido: os dois são módulos da mesma plataforma da Elotech e não têm marca própria.
+  Procuramos: o bundle do Oxy traz um ícone por módulo (`administracao-ouvidoria.png`,
+  `arrecadacao-cemiterio.png` e dezenas de outros), e **nenhum** para esses dois. O que cada um
+  declara como ícone é a marca da plataforma — o Processo Digital usa o "oxy" inteiro, e a
+  Assinatura Digital um recorte da letra "y" que, nos 34 px do cartão, vira um borrão verde sem
+  significado. Então os dois levam o `oxy-logo.svg` (vetor, tirado de
+  `assinatura-digital/img/modules/oxy-logo.svg`), e quem separa um do outro é o nome ao lado.
+  Na primeira versão esses dois cartões tiveram ícones DESENHADOS aqui, porque baixar a marca de
+  uma empresa de fora sem perguntar não é coisa que se faça — foi o Paulo quem pediu as oficiais
+  em 13/09/2026, e a autorização é dele (mesma história do ícone do SIGSS).
+- **O "oxy" é a única marca DEITADA da página** (2,2:1) e por isso tem regra própria,
+  `.topo img.marca-oxy`: 64 px de largura em vez de 34, e sem arredondamento. Espremido no quadrado
+  dos outros ele sairia com 15 px de altura e ninguém leria.
 - **Os logotipos são CÓPIAS, não links para a pasta do outro app.** Cada app é um repositório
   próprio, e o Pages só serve o que está neste. Trocar a arte de um deles não atualiza esta página
   sozinho — é copiar o arquivo de novo.
