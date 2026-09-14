@@ -123,6 +123,18 @@ pode envelhecer junto.
   sozinho — é copiar o arquivo de novo.
 - **O arredondamento de 8 px é nosso, não das artes.** As quatro chegam em quadrado de canto vivo;
   ao lado de cartões arredondados isso fica duro. É a única coisa que o CSS faz com elas.
+- **O ícone da aba é o BRASÃO do município** (13/09/2026, pedido do Paulo: *"quero o brasão da
+  prefeitura aí, no lugar desse desenho verde"*). Antes era um `+` branco em quadrado verde,
+  desenhado em SVG dentro do próprio `<link>`. A arte veio do Wikimedia Commons
+  (`BrasaoSaoMAteusDoSul.png`, 1213×1200, fundo transparente) porque nenhuma das marcas que já
+  estavam aqui serve: nelas o brasão vem colado ao texto e mede no máximo 180 px de lado, e
+  recortado ficaria sem resolução. O corte é a caixa do conteúdo com 10% de folga, centrado em
+  quadrado; daí saem 16, 32, 48 e 180 px, os três primeiros empacotados em `favicon.ico`
+  (PNG-in-ICO, montado à mão em PowerShell — não há ferramenta de imagem nesta máquina) e o de
+  180 como `apple-touch-icon.png`. **Aos 16 px o brasão vira um borrão colorido**, e isso é da
+  natureza dele: é um brasão heráldico completo, com espigas, milho, laço e três linhas de texto.
+  Se um dia incomodar, o caminho é recortar só o escudo central — mas aí já não é o brasão
+  inteiro.
 - **O cartão inteiro é clicável**, não só o "Abrir": no celular, isso é a diferença entre
   acertar e errar o toque.
 - **O endereço aparece por extenso** embaixo de cada bloco, porque quem divulga precisa
