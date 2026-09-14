@@ -213,3 +213,11 @@ de que os ícones quebraram. Há um servidor estático mínimo para isso em
 ferramenta de máquina, não parte do site. O caminho do node no `launch.json` está em formato 8.3 e
 com barras normais (`C:/PROGRA~1/nodejs/node.exe`) porque o lançador engasga tanto com o espaço de
 `Program Files` quanto com a contrabarra.
+
+## O contato do rodapé (13/09/2026)
+
+"Fale com a coordenação da Atenção Primária" não era acionável — a pessoa trava no celular e a
+frase não leva a lugar nenhum. Virou um botão de WhatsApp (`wa.me/5542988724354`, **(42)
+98872-4354**, número dado pelo Paulo), com o número por extenso ao lado para quem estiver no
+computador e precisar anotar ou ligar. **Sem o logotipo do WhatsApp**: a palavra já identifica, e a
+marca é de terceiro — mesmo critério que segurou o ícone do SIGSS e o do Oxy.
