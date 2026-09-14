@@ -253,6 +253,36 @@ Duas coisas ficam disso: **conferir no DNS, nunca no painel** (`nslookup` contra
 fechar**. Ela se anuncia na própria tela ("Domínio em transição" e "o Modo básico só poderá ser
 selecionado em aproximadamente 1h59m").
 
+### O HTTPS não sai sozinho — e o jeito de saber é olhar a API, não tentar o endereço
+
+Depois da virada, `https://` ficou **2h30 sem responder**. A documentação do GitHub diz "pode levar
+até uma hora", então a primeira hora é espera normal. O que estava acontecendo era outra coisa: **o
+pedido do certificado nunca tinha começado** — em `gh api repos/<dono>/<repo>/pages` não existia o
+objeto `https_certificate`.
+
+**Essa é a distinção que só a API dá.** Tentar o `https://` devolve exatamente o mesmo erro de
+conexão nos dois casos — "ainda não foi pedido" e "está sendo emitido" —, então ficar recarregando
+o navegador não diz nada. Na API:
+
+| `https_certificate` | o que significa |
+|---|---|
+| ausente | **não começou** — é hora do empurrão |
+| `authorization_pending` | está sendo emitido; esperar |
+| `approved` | pronto, e aí dá para ligar o `https_enforced` |
+
+**O empurrão é o que o próprio GitHub documenta:** tirar o domínio das configurações do Pages e pôr
+de volta. Pela API são dois `PUT` — `{"cname":null}` e depois `{"cname":"<dominio>"}` —, e o estado
+mudou para `authorization_pending` no mesmo minuto. **Não mande `https_enforced` junto no PUT de
+remoção**: enquanto não há certificado, a API recusa a requisição inteira com "The certificate does
+not exist yet" e nada acontece — parece que o comando rodou.
+
+O site fica fora do ar por **segundos** entre os dois PUT (e só no domínio personalizado; o
+`paulosgp.github.io/guia-saude` continua). O arquivo `CNAME` do repositório continua sendo a fonte
+da verdade e é reaplicado na compilação seguinte.
+
+**Ligar o `Enforce HTTPS` é um passo à parte, e não é automático**: `{"https_enforced":true}` depois
+de `approved`. Sem ele, `http://` continua servindo a página em claro para sempre.
+
 ### O ícone da aba e o `apple-touch-icon` continuam sendo o brasão
 
 Não mudaram com o domínio. Mudaram sim as metatags `og:` — apontavam para `guiaaps.com.br`, e é
