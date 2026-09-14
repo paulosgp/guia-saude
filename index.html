@@ -9,11 +9,12 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Guia Saúde — São Mateus do Sul">
 <meta property="og:description" content="Os sistemas da Atenção Primária num lugar só. Escolha por onde entrar.">
-<meta property="og:image" content="https://guiaaps.com.br/logo-sms.png">
-<meta property="og:url" content="https://guiaaps.com.br/">
+<meta property="og:image" content="https://saudesaomateusdosul.com.br/logo-sms.png">
+<meta property="og:url" content="https://saudesaomateusdosul.com.br/">
 <meta property="og:locale" content="pt_BR">
 <title>Guia Saúde</title>
 <style>
@@ -122,6 +123,16 @@ footer b{color:var(--ink)}
   padding:8px 14px;border-radius:999px;border:1px solid transparent;transition:border-color .14s ease}
 .zap:hover,.zap:focus-visible{border-color:var(--verde)}
 .zap svg{width:17px;height:17px;flex:0 0 auto}
+/* "Coloque na tela do celular": o passo que decide se a porta é usada ou esquecida. Quem tem de
+   digitar o endereço toda vez volta a abrir o sistema que já está salvo, e a porta não pega.
+   Fica no rodapé e não no topo porque é coisa de fazer UMA vez — no topo, viraria ruído diário
+   para quem já instalou. */
+.atalho{margin-top:26px;padding:16px 18px;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;max-width:62ch}
+.atalho b{display:block;font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-size:16px;
+  color:var(--ink);margin-bottom:6px}
+.atalho p{margin:6px 0 0;font-size:14.5px;line-height:1.5}
+.atalho span{color:var(--chip-ink);font-weight:600}
 @media (prefers-reduced-motion:reduce){.app{transition:none}.app:hover{transform:none}}
 </style>
 
@@ -242,6 +253,13 @@ footer b{color:var(--ink)}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       WhatsApp (42) 98872-4354
     </a>
+
+    <div class="atalho">
+      <b>Coloque na tela do seu celular</b>
+      <p><span>No Android:</span> abra esta página no Chrome, toque nos três pontinhos do canto e escolha <b style="display:inline;font-size:inherit">Adicionar à tela inicial</b>.</p>
+      <p><span>No iPhone:</span> abra no Safari, toque no quadradinho com a seta para cima e escolha <b style="display:inline;font-size:inherit">Adicionar à Tela de Início</b>.</p>
+      <p>Assim o Guia Saúde vira um ícone junto dos seus aplicativos, e você não precisa digitar o endereço de novo.</p>
+    </div>
   </footer>
 </main>
 
