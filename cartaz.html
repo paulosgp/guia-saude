@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Cartaz do Guia Saúde — para imprimir</title>
+<link rel="icon" href="favicon.ico" sizes="16x16 32x32 48x48">
+<style>
+/* O cartaz é uma FOLHA A4, não uma página de site: tudo aqui é medido em milímetros, e a tela
+   apenas mostra como vai sair no papel. Por isso nada de clamp() nem vh — o que manda é o que
+   cabe na folha, e uma medida relativa à janela sairia de tamanho diferente em cada computador. */
+@page{size:A4 portrait;margin:0}
+
+/* As fontes são as mesmas da porta, e moram aqui (ver o CLAUDE.md): num posto com sinal ruim, um
+   cartaz que espera o Google Fonts imprime com a fonte errada — e quem mandou imprimir não vê. */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:600 700;font-stretch:100%;
+  font-display:swap;src:url(fontes/archivo-latin.woff2) format('woff2')}
+@font-face{font-family:'Source Sans 3';font-style:normal;font-weight:400 600;
+  font-display:swap;src:url(fontes/sourcesans3-latin.woff2) format('woff2')}
+
+:root{--verde:#0e8c4a; --verde-forte:#0a6e3a; --ink:#16211c; --muted:#5b6a62; --line:#dde2dc; --chip:#e8f2eb}
+*{box-sizing:border-box}
+body{margin:0;background:#54615a;color:var(--ink);
+  font:16px/1.5 "Source Sans 3","Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+
+.folha{width:210mm;height:297mm;background:#fff;margin:18px auto;padding:16mm 16mm 12mm;
+  display:flex;flex-direction:column;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+
+.marcas{display:flex;align-items:center;gap:10mm;flex-wrap:wrap;line-height:0}
+.marcas img{height:15mm;width:auto;display:block}
+
+h1{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:700;font-size:23mm;
+  line-height:1;letter-spacing:-.02em;margin:9mm 0 0}
+h1 span{color:var(--verde)}
+.chamada{font-size:6mm;color:var(--muted);margin:4mm 0 0;max-width:150mm}
+
+/* O QR e o endereço são o miolo: quem passa no corredor tem de conseguir ler os dois de longe.
+   Por isso o endereço vem em caixa e grande — e não como legenda miúda embaixo do código. */
+.codigo{display:flex;align-items:center;gap:10mm;margin:9mm 0 0;
+  border:0.6mm solid var(--line);border-radius:4mm;padding:7mm}
+.codigo img{width:52mm;height:52mm;flex:0 0 52mm;display:block}
+/* 6.8mm não é gosto, é medida: o endereço tem 26 caracteres e precisa caber numa LINHA SÓ — a
+   folha dá 101mm ao lado do código, e nesse corpo o texto ocupa 97mm. Maior que isso, ele quebra
+   no meio da palavra ("saudesaomateusdos / ul.com.br"), que é justamente o que ninguém consegue
+   ler de longe nem copiar sem errar. Se mexer no tamanho do QR, meça isto de novo. */
+.endereco{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:700;
+  font-size:6.8mm;line-height:1.12;letter-spacing:-.01em}
+.aponte{font-size:5mm;color:var(--muted);margin:0 0 3mm}
+.ou{font-size:4.4mm;color:var(--muted);margin:3mm 0 0}
+
+h2{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:700;font-size:6.4mm;
+  margin:9mm 0 3mm}
+.passos{display:grid;grid-template-columns:1fr 1fr;gap:5mm}
+.passo{background:var(--chip);border-radius:3mm;padding:5mm 5.5mm}
+.passo b{display:block;font-family:Archivo,"Segoe UI",system-ui,sans-serif;
+  font-size:5mm;color:var(--verde-forte);margin-bottom:2mm}
+.passo p{margin:0;font-size:4.6mm;line-height:1.42}
+.porque{font-size:4.6mm;color:var(--muted);margin:4mm 0 0}
+
+footer{margin-top:auto;padding-top:5mm;border-top:0.5mm solid var(--line);
+  display:flex;justify-content:space-between;align-items:flex-end;gap:6mm;font-size:4.2mm}
+footer b{display:block;color:var(--ink);font-size:4.6mm}
+footer span{color:var(--muted)}
+
+/* O botão é da TELA. No papel ele não existe — e o fundo cinza da tela também não, senão a
+   impressora gasta tinta desenhando a moldura em volta da folha. */
+.barra{max-width:210mm;margin:18px auto 0;display:flex;gap:10px;align-items:center;
+  color:#eef3f0;font-size:15px}
+.barra button{font:inherit;font-weight:600;background:var(--verde);color:#fff;border:0;
+  padding:9px 18px;border-radius:999px;cursor:pointer}
+.barra button:hover{background:var(--verde-forte)}
+
+@media print{
+  body{background:#fff}
+  .barra{display:none}
+  .folha{margin:0;box-shadow:none;width:auto;height:auto;min-height:0}
+}
+</style>
+</head>
+<body>
+
+<div class="barra">
+  <button type="button" onclick="window.print()">Imprimir</button>
+  <span>Sai em uma folha A4. Se a impressora perguntar, escolha “Tamanho real” — não “Ajustar à página”.</span>
+</div>
+
+<div class="folha">
+  <div class="marcas">
+    <img src="logo-prefeitura.png" alt="Prefeitura de São Mateus do Sul">
+    <img src="logo-sms.png" alt="Secretaria de Saúde — São Mateus do Sul">
+  </div>
+
+  <h1>Guia <span>Saúde</span></h1>
+  <p class="chamada">Todos os sistemas da Atenção Primária num lugar só: Planifica Fácil, SIGSS,
+    AvaliaACS, Guia Clínico, os documentos assinados e os sistemas da Prefeitura.</p>
+
+  <div class="codigo">
+    <img src="qr.png" alt="">
+    <div>
+      <p class="aponte">Aponte a câmera do celular para o código:</p>
+      <div class="endereco">saudesaomateusdosul.com.br</div>
+      <p class="ou">Ou digite esse endereço no navegador.</p>
+    </div>
+  </div>
+
+  <h2>Coloque na tela do seu celular</h2>
+  <div class="passos">
+    <div class="passo">
+      <b>Android</b>
+      <p>Abra no <b style="display:inline;font-size:inherit;color:inherit">Chrome</b>, toque nos
+        três pontinhos do canto e escolha <b style="display:inline;font-size:inherit;color:inherit">Adicionar à tela inicial</b>.</p>
+    </div>
+    <div class="passo">
+      <b>iPhone</b>
+      <p>Abra no <b style="display:inline;font-size:inherit;color:inherit">Safari</b>, toque no
+        quadradinho com a seta para cima e escolha <b style="display:inline;font-size:inherit;color:inherit">Adicionar à Tela de Início</b>.</p>
+    </div>
+  </div>
+  <p class="porque">Assim o Guia Saúde vira um ícone junto dos seus aplicativos, e você não
+    precisa digitar o endereço nunca mais.</p>
+
+  <footer>
+    <div>
+      <b>Secretaria Municipal da Saúde de São Mateus do Sul — Paraná</b>
+      <span>Cada sistema pede o acesso dele. Problema para entrar, fale com a coordenação da Atenção Primária.</span>
+    </div>
+    <div style="text-align:right;white-space:nowrap">
+      <b>WhatsApp</b>
+      <span>(42) 98872-4354</span>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
