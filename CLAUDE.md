@@ -34,6 +34,28 @@ logotipo) — o app nasceu no mesmo dia e não tinha marca; o mesmo arquivo é o
 o posto da pessoa. **Enquanto o DNS e a Vercel não estiverem configurados pelo Paulo**, o link
 leva a lugar nenhum — o cartão foi posto antes por pedido dele.
 
+**E a seção "Prefeitura", desde 13/09/2026**, com os dois sistemas da Prefeitura (Oxy/Elotech):
+**Assinatura Digital** e **Processo Digital**. Entraram como seção própria, e não em "Sistemas",
+porque não são da Saúde nem do cuidado — são a papelada administrativa do município, que só parte
+da equipe usa. A cor diz o mesmo: os ícones dos dois têm fundo **azul**, enquanto os nossos têm
+fundo verde.
+
+### Os links são os endereços-BASE, não os que o Paulo mandou
+
+Ele mandou os dois endereços copiados do navegador, e os dois eram **URLs de sessão de login**
+(`openid.oxy.elotech.com.br/...?execution=...&tab_id=...&state=...&nonce=...&code_challenge=...`).
+Aqueles parâmetros são de uso único: colados na página, funcionariam hoje para ele e dariam erro de
+sessão inválida para qualquer outra pessoa, em qualquer outro dia. O que ficou no cartão é a porta
+estável de cada sistema, conferida respondendo 200:
+
+- `https://saomateusdosul.oxy.elotech.com.br/assinatura-digital/`
+- `https://saomateusdosul.oxy.elotech.com.br/processo-digital/`
+
+É o próprio sistema que manda a pessoa ao login do Oxy e a traz de volta. O endereço do
+Processo Digital que ele mandou tinha ainda o **id do setor e o exercício de 2026** embutidos
+(`.../e53a...m8a2026/inbox?setor=d6fdcea1...`) — a caixa de entrada DELE. Fixar isso no cartão
+mandaria todo mundo à caixa de um setor só, e quebraria na virada do ano.
+
 ## Os três blocos, e por que cada rótulo está escrito assim
 
 | bloco | para quem | endereço |
@@ -42,6 +64,8 @@ leva a lugar nenhum — o cartão foi posto antes por pedido dele.
 | SIGSS | Toda a equipe | `c3102prd.cloudmv.com.br` |
 | AvaliaACS | Enfermeiros e coordenação | `avalia-acs.web.app` |
 | Guia Clínico APS | Enfermeiros e médicos | `guiaclinicoaps.github.io` |
+| Assinatura Digital | Quem assina documento | `saomateusdosul.oxy.elotech.com.br` |
+| Processo Digital | Coordenação e chefias | `saomateusdosul.oxy.elotech.com.br` |
 
 **O SIGSS entrou em 13/09/2026, a pedido dele.** É o único bloco que não é sistema nosso — é o
 sistema da Secretaria (cloudMV), onde a equipe passa o dia e onde as agentes registram as visitas.
@@ -73,6 +97,11 @@ pode envelhecer junto.
   quase-preto foi **achatado na cor exata** antes de salvar: o ruído de JPEG no fundo fazia o PNG
   sair com 82 KB: achatado, são 13 KB. Se a arte precisar ser refeita, os números do recorte estão
   aqui.
+- **Os ícones da Assinatura e do Processo Digital são NOSSOS** (`logo-assinatura.svg`,
+  `logo-processo.svg`), desenhados como o do Documentos: a folha com a rubrica e as folhas com a
+  seta do trâmite. Não baixamos a marca da Elotech — é empresa de fora, e hospedar a marca dela
+  aqui sem perguntar não é coisa que se faça (mesma razão que segurou o ícone do SIGSS até o Paulo
+  mandar o arquivo). Se um dia ele mandar as marcas oficiais, é só trocar os dois arquivos.
 - **Os logotipos são CÓPIAS, não links para a pasta do outro app.** Cada app é um repositório
   próprio, e o Pages só serve o que está neste. Trocar a arte de um deles não atualiza esta página
   sozinho — é copiar o arquivo de novo.
@@ -119,3 +148,12 @@ HTTPS* nas configurações do Pages, se não vier ligado sozinho).
 
 Editar o `index.html`, commitar e dar push no `main`. O Pages publica sozinho em um ou dois
 minutos. Não há build, não há painel, não há segredo em lugar nenhum.
+
+**Para conferir no navegador antes de publicar**: abrir o arquivo por `file://` não serve — o
+painel o carrega como `data:`, e aí todo `<img>` de caminho relativo some, dando a impressão falsa
+de que os ícones quebraram. Há um servidor estático mínimo para isso em
+`.claude apps/.claude/serve-guiasaude.js` (config `guiasaude` no `launch.json` da pasta raiz, porta
+4173). Ele fica **fora** deste repositório de propósito: este aqui é público, e o servidor é
+ferramenta de máquina, não parte do site. O caminho do node no `launch.json` está em formato 8.3 e
+com barras normais (`C:/PROGRA~1/nodejs/node.exe`) porque o lançador engasga tanto com o espaço de
+`Program Files` quanto com a contrabarra.
