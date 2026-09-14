@@ -1,7 +1,8 @@
 # CLAUDE.md — Guia Saúde
 
 A **porta da frente** dos sistemas da Atenção Primária de São Mateus do Sul, em
-`https://guiaaps.com.br`. Uma página estática, sem backend, sem login e **sem dado de
+`https://saudesaomateusdosul.com.br` (era `guiaaps.com.br` até 14/09/2026 — ver "A troca de
+endereço", abaixo). Uma página estática, sem backend, sem login e **sem dado de
 paciente** — só o logotipo da Secretaria, o nome e três blocos que levam a cada sistema.
 
 Decidida com o Paulo em 12/09/2026, depois de a conversa do "guarda-chuva" passar por
@@ -199,6 +200,83 @@ sem se tocar.
 
 Depois que o DNS propagar, o certificado HTTPS o próprio GitHub emite (ligar *Enforce
 HTTPS* nas configurações do Pages, se não vier ligado sozinho).
+
+## A troca de endereço (14/09/2026)
+
+`guiaaps.com.br` → **`saudesaomateusdosul.com.br`**. O motivo é dele: *"o nome não combina mais"* —
+o "aps" ficou apertado para o que a página virou (já tem Prefeitura, documentos, sistema da
+Secretaria). O domínio ele mesmo registrou, no Registro.br, em nome próprio.
+
+**`guiasaude.com.br` seria o nome óbvio e é de um terceiro** (registrado, vence em 2027). Ficaram
+livres `guiasaude.org.br` e os `.net.br`/`.inf.br`/`.tec.br`, e a escolha entre "o nome da página
+em .org.br" e "um nome do município em .com.br" foi dele.
+
+### O que mudou de endereço, e o que NÃO mudou
+
+**Só a raiz.** `planifica.guiaaps.com.br` e `documentos.guiaaps.com.br` continuam onde estavam,
+apontando para a Vercel — são registros próprios na zona de `guiaaps.com.br`, e nada nesta troca
+os alcança. **O domínio antigo continua sendo pago**, e por causa desses dois, não da porta.
+
+### O antigo redireciona, e precisou de repositório próprio
+
+O GitHub Pages aceita **um domínio por repositório** (é o que o arquivo `CNAME` diz). Com este
+repositório respondendo pelo endereço novo, o antigo pararia de abrir — e ele está em grupo de
+WhatsApp, no menu do Planifica Fácil e em rodapé de documento impresso. Por isso
+**`paulosgp/guiaaps-redirecionamento`**: público, sem conteúdo, só uma página que redireciona,
+com `CNAME` = `guiaaps.com.br`.
+
+O redirecionamento é **duplo de propósito**: `<meta http-equiv="refresh">` funciona sem
+JavaScript, e o `location.replace` leva caminho, query e âncora junto **e substitui** a entrada
+no histórico — sem isso, o "voltar" do navegador devolveria a pessoa para a página de
+redirecionamento, num laço.
+
+### A ordem, que é o que impede a página de ficar sem endereço nenhum
+
+1. os cinco registros na zona do domínio novo (4 × `A` do Pages + `CNAME` de `www`);
+2. **esperar publicar de verdade** — conferido em dois resolvedores públicos, nunca no painel;
+3. só então trocar o `CNAME` deste repositório;
+4. criar o repositório de redirecionamento e ligar o Pages nele.
+
+Trocar o `CNAME` antes do passo 2 derruba o endereço antigo na hora e o novo ainda não responde:
+a página fica sem nenhum endereço funcionando. Entre o 3 e o 4 há uma janela de minutos em que a
+raiz antiga devolve 404 — por isso os dois andam juntos, no mesmo dia.
+
+### O que custou uma noite, e vale saber antes de abrir domínio novo no Registro.br
+
+**Domínio recém-registrado entra numa janela de transição (~2 h) em que o editor de zona não
+aplica nada.** Os cinco registros foram gravados, o painel os listou de volta depois de recarregar
+a página — e **eles não publicaram**. Quatro horas depois a zona existia (SOA e NS respondendo) e
+continuava **vazia**. Não era propagação: era o Registro.br não ter aplicado.
+
+Duas coisas ficam disso: **conferir no DNS, nunca no painel** (`nslookup` contra 8.8.8.8 e
+1.1.1.1 é a única prova de que publicou), e **contar com refazer os registros depois que a janela
+fechar**. Ela se anuncia na própria tela ("Domínio em transição" e "o Modo básico só poderá ser
+selecionado em aproximadamente 1h59m").
+
+### O ícone da aba e o `apple-touch-icon` continuam sendo o brasão
+
+Não mudaram com o domínio. Mudaram sim as metatags `og:` — apontavam para `guiaaps.com.br`, e é
+delas que sai a prévia quando alguém manda o link no grupo.
+
+## O atalho na tela do celular (14/09/2026)
+
+Foi a primeira melhoria da lista que eu tinha proposto e ele aprovou, e é a que ataca o problema
+real desta página: **uma porta só serve se as pessoas passarem por ela**. Quem tem de lembrar e
+digitar o endereço volta a abrir o sistema que já está salvo no celular, e a porta não pega.
+
+São duas peças: **`manifest.webmanifest`** (nome curto, `display: standalone`, o brasão em 192 e
+512 — gerados do mesmo quadrado do favicon) e um **bloco no rodapé** com o passo a passo de
+Android e iPhone.
+
+**Fica no RODAPÉ, não no topo**: é coisa de fazer uma vez só, e no topo viraria ruído diário para
+quem já instalou.
+
+**Foi feito DEPOIS da troca de domínio, e a ordem não é detalhe:** atalho instalado guarda a
+origem, então um atalho criado no endereço antigo viraria casca vazia depois da mudança — cada
+pessoa teria de instalar de novo.
+
+Os ícones **não são `maskable`** de propósito: o brasão tem fundo transparente e o recorte
+circular do Android comeria as espigas e o laço. Como `any`, o sistema desenha a placa por baixo.
 
 ## Publicar uma mudança
 
