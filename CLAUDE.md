@@ -143,8 +143,36 @@ pode envelhecer junto.
   sem a placa, o azul do texto some no fundo escuro.
 - **Cada link abre em aba nova** (`target="_blank"` + `rel="noopener"`), para a pessoa não
   perder a porta ao fechar o app.
-- **Sem biblioteca, sem build.** Um `index.html`, um PNG e o `CNAME`. As fontes vêm do
-  Google Fonts com pilha de fallback declarada.
+- **Sem biblioteca, sem build.** Um `index.html`, as imagens e o `CNAME`.
+- **As fontes moram no repositório, não no Google** (13/09/2026). Antes vinham do Google Fonts;
+  isso custava duas conexões novas (DNS + TLS em `fonts.googleapis.com` e em `fonts.gstatic.com`)
+  antes de o texto assentar — nos postos rurais, com sinal ruim, isso aparece — e fazia a página de
+  uma secretaria de saúde chamar um terceiro a cada visita. Ficaram só os arquivos do subconjunto
+  **latino** (`fontes/`, 68 KB somados): ele cobre `U+0000–00FF`, ou seja, todo acento do
+  português; o `latin-ext` foi baixado e descartado (mais 92 KB para glifos que esta página nunca
+  usa). Archivo e Source Sans 3 são licença SIL OFL, que permite hospedar.
+
+## A altura da página, e por que ela não virou aba nem sanfona (13/09/2026)
+
+O Paulo apontou que, no computador, era preciso rolar para achar os apps — *"muitas vezes pode ser
+que nem ache"* — e perguntou se não dava para deixar mais dinâmico. **Não virou dinâmico de
+propósito.** Com sete cartões, aba/sanfona/carrossel não facilita achar: esconde metade atrás de um
+clique e obriga a pessoa a adivinhar em que gaveta está o que ela quer. O que sobrava era **altura
+de cartão**, e foi o que caiu:
+
+- **Saiu a linha "Abrir ↗"** de cada cartão. O cartão inteiro já era clicável desde o começo — a
+  linha era enfeite custando ~50 px em cada um dos sete. A seta subiu para o canto do cartão: some
+  a frase, fica o sinal de que abre em aba nova.
+- **Quatro cartões por fileira** em vez de três, o que exigiu abrir o `main` de 980 para 1100 px.
+  "Sistemas" inteiro passou a caber numa fileira.
+- **"Documentos" e "Prefeitura" ficaram lado a lado** (`.duplas`, 1/3 e 2/3). Uma tem um cartão e a
+  outra tem dois: sozinhas, gastavam duas fileiras inteiras para três cartões. Empilham no celular
+  (abaixo de 760 px).
+
+Resultado medido: a página caiu de ~1700 px para **1125 px** de altura, e o título "Prefeitura"
+subiu para os 637 px — dentro da primeira tela de um notebook. No celular continua sendo rolagem
+(sete cartões numa coluna são 2343 px), e é aceitável: lá a porta de entrada é o atalho na tela
+inicial, não a rolagem.
 
 ## Hospedagem — GitHub Pages
 

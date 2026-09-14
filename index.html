@@ -16,10 +16,19 @@
 <meta property="og:url" content="https://guiaaps.com.br/">
 <meta property="og:locale" content="pt_BR">
 <title>Guia Saúde</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700&family=Source+Sans+3:wght@400;600&display=swap">
 <style>
+/* As fontes moram AQUI, não no Google. Nos postos com sinal ruim, buscá-las fora custava duas
+   conexões novas (DNS + TLS em fonts.googleapis.com e em fonts.gstatic.com) antes de o texto
+   assentar — e fazia a página de uma secretaria de saúde chamar um terceiro a cada visita.
+   São só os arquivos do subconjunto LATINO (68 KB somados): ele cobre U+0000–00FF, ou seja, todo
+   acento do português. Ambas são licença SIL OFL, que permite hospedar. */
+@font-face{font-family:'Archivo';font-style:normal;font-weight:600 700;font-stretch:100%;
+  font-display:swap;src:url(fontes/archivo-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2122,U+2191,U+2193,U+2212,U+FEFF,U+FFFD}
+@font-face{font-family:'Source Sans 3';font-style:normal;font-weight:400 600;
+  font-display:swap;src:url(fontes/sourcesans3-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2122,U+2191,U+2193,U+2212,U+FEFF,U+FFFD}
+
 /* As cores saem do próprio logotipo da Secretaria: o verde do "SAÚDE" e o azul do "SECRETARIA DE".
    Nada foi inventado — é a identidade que a equipe já reconhece no papel timbrado. */
 :root{
@@ -41,7 +50,9 @@
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);margin:0;padding:0;
   font:17px/1.55 "Source Sans 3","Segoe UI",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
-main{max-width:980px;margin:0 auto;padding:40px 22px 72px}
+/* 1100 px, e não os 980 de antes: com 980 sobrava largura para três cartões por fileira, e os
+   sete só fechavam em três fileiras. Com 1100 entram quatro, e "Sistemas" inteiro cabe numa. */
+main{max-width:1100px;margin:0 auto;padding:36px 22px 64px}
 
 /* Duas marcas no alto, na mesma ordem do papel timbrado: a Prefeitura (o guarda-chuva) e a
    Secretaria de Saúde (de quem é esta porta). Casadas pela ALTURA, e não pela largura: as duas
@@ -60,11 +71,21 @@ h1 span{color:var(--verde)}
 .chamada{font-size:clamp(17px,2.2vw,19px);color:var(--muted);max-width:56ch;margin:0 0 6px}
 
 h2{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:600;font-size:13px;
-  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:44px 0 14px}
+  letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:30px 0 12px}
 
-.apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
-.app{display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid var(--line);
-  border-radius:16px;padding:22px 22px 20px;text-decoration:none;color:inherit;box-shadow:var(--sombra);
+/* Quatro por fileira, e não três: os sete cartões passam a caber numa tela de notebook, sem
+   precisar rolar para descobrir que existe uma seção "Prefeitura" lá embaixo. Foi o que o Paulo
+   apontou em 13/09/2026 — e a resposta certa era diminuir a altura de cada cartão, não esconder
+   cartão atrás de aba ou sanfona: com sete itens, tudo que esconde piora a busca. */
+.apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+/* "Documentos" tem um cartão e "Prefeitura" tem dois: cada uma sozinha numa fileira desperdiçava
+   duas fileiras inteiras para três cartões. Lado a lado (1/3 e 2/3), viram uma só — e é o que
+   traz a seção "Prefeitura" para dentro da primeira tela. Empilham no celular. */
+.duplas{display:grid;grid-template-columns:1fr 2fr;gap:0 14px;align-items:start}
+.duplas h2{margin-top:30px}
+@media (max-width:760px){.duplas{grid-template-columns:1fr}}
+.app{display:flex;flex-direction:column;gap:9px;background:var(--card);border:1px solid var(--line);
+  border-radius:16px;padding:17px 18px 16px;text-decoration:none;color:inherit;box-shadow:var(--sombra);
   transition:transform .14s ease,border-color .14s ease}
 .app:hover,.app:focus-visible{transform:translateY(-2px);border-color:var(--verde)}
 .app:focus-visible{outline:3px solid var(--verde);outline-offset:3px}
@@ -77,14 +98,18 @@ h2{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:600;font-size
    com 15 px de altura e ninguém leria. Ganha um espaço mais largo, e nenhum arredondamento —
    não há caixa nenhuma para arredondar. */
 .topo img.marca-oxy{width:64px;border-radius:0}
-.nome{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:700;font-size:21px;letter-spacing:-.01em}
-.oque{color:var(--muted);font-size:16px;margin:0;flex:1}
+.nome{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em}
+.oque{color:var(--muted);font-size:15.5px;margin:0;flex:1}
 .quem{display:inline-flex;align-self:flex-start;background:var(--chip);color:var(--chip-ink);
-  font-weight:600;font-size:13px;padding:4px 11px;border-radius:999px}
-.abrir{display:flex;align-items:center;gap:7px;color:var(--verde-forte);font-weight:600;font-size:16px;
-  border-top:1px solid var(--line);padding-top:12px;margin-top:2px}
-.abrir svg{width:17px;height:17px}
-.end{font-size:13.5px;color:var(--muted);word-break:break-all}
+  font-weight:600;font-size:12.5px;padding:3px 10px;border-radius:999px}
+/* A seta saiu da linha "Abrir" e subiu para o canto: o cartão inteiro já era clicável, então
+   aquela linha era enfeite custando ~50 px de altura em cada um dos sete. A seta fica para dizer
+   que abre em aba nova — some a frase, fica o sinal. */
+.seta{width:16px;height:16px;margin-left:auto;flex:0 0 auto;color:var(--verde-forte);opacity:.55;
+  transition:opacity .14s ease}
+.app:hover .seta,.app:focus-visible .seta{opacity:1}
+.end{font-size:13px;color:var(--muted);word-break:break-all;
+  border-top:1px solid var(--line);padding-top:9px;margin-top:1px}
 
 footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--line);color:var(--muted);font-size:14.5px}
 footer b{color:var(--ink)}
@@ -110,12 +135,10 @@ footer b{color:var(--ink)}
       <div class="topo">
         <img src="logo-planifica.png" alt="" width="34" height="34">
         <span class="nome">Planifica Fácil</span>
+        <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
       </div>
       <p class="oque">O acompanhamento de cada paciente da unidade: consultas, visitas, rastreios e as linhas de cuidado.</p>
       <span class="quem">Equipe da unidade</span>
-      <span class="abrir">Abrir
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
-      </span>
       <span class="end">planifica.guiaaps.com.br</span>
     </a>
 
@@ -123,12 +146,10 @@ footer b{color:var(--ink)}
       <div class="topo">
         <img src="logo-sigss.png" alt="" width="34" height="34">
         <span class="nome">SIGSS</span>
+        <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
       </div>
       <p class="oque">O sistema da Secretaria: cadastro do usuário, agenda, atendimento e o registro das visitas das agentes.</p>
       <span class="quem">Toda a equipe</span>
-      <span class="abrir">Abrir
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
-      </span>
       <span class="end">c3102prd.cloudmv.com.br</span>
     </a>
 
@@ -136,12 +157,10 @@ footer b{color:var(--ink)}
       <div class="topo">
         <img src="logo-avaliaacs.svg" alt="" width="34" height="34">
         <span class="nome">AvaliaACS</span>
+        <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
       </div>
       <p class="oque">O lançamento das visitas das agentes comunitárias e a avaliação mensal do desempenho.</p>
       <span class="quem">Enfermeiros e coordenação</span>
-      <span class="abrir">Abrir
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
-      </span>
       <span class="end">avalia-acs.web.app</span>
     </a>
 
@@ -149,17 +168,17 @@ footer b{color:var(--ink)}
       <div class="topo">
         <img src="logo-guiaclinico.png" alt="" width="34" height="34">
         <span class="nome">Guia Clínico APS</span>
+        <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
       </div>
       <p class="oque">O sistema que guia a consulta em diversas situações de saúde: o que perguntar, o que avaliar e o que fazer em cada caso.</p>
       <span class="quem">Enfermeiros e médicos</span>
-      <span class="abrir">Abrir
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
-      </span>
       <span class="end">guiaclinicoaps.github.io</span>
     </a>
 
   </div>
 
+  <div class="duplas">
+  <section>
   <h2>Documentos</h2>
   <div class="apps">
 
@@ -167,17 +186,17 @@ footer b{color:var(--ink)}
       <div class="topo">
         <img src="logo-documentos.svg" alt="" width="34" height="34">
         <span class="nome">Documentos Institucionais</span>
+        <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
       </div>
       <p class="oque">Os protocolos, POPs, normas e rotinas, regimentos e planejamentos assinados. Digite a dúvida e veja em qual documento e em que página está a resposta.</p>
       <span class="quem">Toda a equipe</span>
-      <span class="abrir">Abrir
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
-      </span>
       <span class="end">documentos.guiaaps.com.br</span>
     </a>
 
   </div>
 
+  </section>
+  <section>
   <h2>Prefeitura</h2>
   <div class="apps">
 
@@ -185,12 +204,10 @@ footer b{color:var(--ink)}
       <div class="topo">
         <img class="marca-oxy" src="logo-oxy.svg" alt="Oxy" width="64" height="34">
         <span class="nome">Assinatura Digital</span>
+        <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
       </div>
       <p class="oque">Onde os documentos da Prefeitura são assinados eletronicamente: os envelopes que chegam para a sua assinatura ficam aqui.</p>
       <span class="quem">Quem assina documento</span>
-      <span class="abrir">Abrir
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
-      </span>
       <span class="end">saomateusdosul.oxy.elotech.com.br</span>
     </a>
 
@@ -198,15 +215,15 @@ footer b{color:var(--ink)}
       <div class="topo">
         <img class="marca-oxy" src="logo-oxy.svg" alt="Oxy" width="64" height="34">
         <span class="nome">Processo Digital</span>
+        <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
       </div>
       <p class="oque">O trâmite dos processos administrativos: abrir, acompanhar e despachar o que chega ao setor.</p>
       <span class="quem">Coordenação e chefias</span>
-      <span class="abrir">Abrir
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
-      </span>
       <span class="end">saomateusdosul.oxy.elotech.com.br</span>
     </a>
 
+  </div>
+  </section>
   </div>
 
   <footer>
