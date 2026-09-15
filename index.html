@@ -100,6 +100,14 @@ h2{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:600;font-size
    não há caixa nenhuma para arredondar. */
 .topo img.marca-oxy{width:64px;border-radius:0}
 .nome{font-family:Archivo,"Segoe UI",system-ui,sans-serif;font-weight:700;font-size:19px;letter-spacing:-.01em}
+/* "Em construção": o Encaminha APS já está no ar, mas o Paulo pediu (15/09/2026) que o cartão avise
+   que ainda não é para uso da rede — os protocolos aguardam a revisão das especialistas e as contas
+   ainda não foram criadas. O link fica, para quem for testar; o selo é o que muda. Âmbar de propósito,
+   para não confundir com o chip verde de "quem usa". */
+.selo{display:inline-flex;align-items:center;background:#fdf1d6;color:#8a5a00;font-weight:700;
+  font-size:11.5px;letter-spacing:.02em;text-transform:uppercase;padding:2px 8px;border-radius:999px;
+  border:1px solid #f0d28a;align-self:flex-start}
+.app.construcao{border-style:dashed}
 .oque{color:var(--muted);font-size:15.5px;margin:0;flex:1}
 .quem{display:inline-flex;align-self:flex-start;background:var(--chip);color:var(--chip-ink);
   font-weight:600;font-size:12.5px;padding:3px 10px;border-radius:999px}
@@ -162,13 +170,14 @@ footer b{color:var(--ink)}
       <span class="end">planifica.guiaaps.com.br</span>
     </a>
 
-    <a class="app" href="https://encaminha.guiaaps.com.br" target="_blank" rel="noopener">
+    <a class="app construcao" href="https://encaminha.guiaaps.com.br" target="_blank" rel="noopener">
       <div class="topo">
         <img src="logo-encaminha.svg" alt="" width="34" height="34">
         <span class="nome">Encaminha APS</span>
         <svg class="seta" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
       </div>
-      <p class="oque">O encaminhamento da paciente para a Ginecologia e Obstetrícia, com o checklist do protocolo, a resposta da especialidade e a contrarreferência no mesmo lugar.</p>
+      <span class="selo">Em construção</span>
+      <p class="oque">O encaminhamento da paciente para a Ginecologia e Obstetrícia, com o checklist do protocolo, a resposta da especialidade e a contrarreferência no mesmo lugar. Ainda em preparação: aguarde o aviso da coordenação antes de usar.</p>
       <span class="quem">Médicos, enfermeiros e o Centro de Ginecologia</span>
       <span class="end">encaminha.guiaaps.com.br</span>
     </a>
