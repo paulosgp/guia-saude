@@ -329,3 +329,16 @@ frase não leva a lugar nenhum. Virou um botão de WhatsApp (`wa.me/554298872435
 98872-4354**, número dado pelo Paulo), com o número por extenso ao lado para quem estiver no
 computador e precisar anotar ou ligar. **Sem o logotipo do WhatsApp**: a palavra já identifica, e a
 marca é de terceiro — mesmo critério que segurou o ícone do SIGSS e o do Oxy.
+
+
+## Encaminha APS (cartão desde 14/09/2026)
+
+Quinto cartão de "Sistemas", logo depois do Planifica Fácil: é o app irmão dele (mesma stack,
+mesmo login), então fica ao lado. Leva a `encaminha.guiaaps.com.br` — o domínio já está no
+projeto da Vercel; enquanto o Paulo não criar o CNAME no Registro.br, o endereço que responde
+é `encaminha.vercel.app`, e o cartão fica apontando para o definitivo de propósito (trocar
+depois custaria uma segunda edição e a equipe decoraria o provisório). Ícone
+`logo-encaminha.svg`, nosso: duas setas que se cruzam (referência e contrarreferência) no
+rosa que o Paulo escolheu para o app; o mesmo arquivo é o favicon dele
+(`Encaminha/src/app/icon.svg`). Rótulo "Médicos, enfermeiros e o Centro de Ginecologia":
+são os dois lados que entram — ACS e técnicos da unidade não têm conta lá.
