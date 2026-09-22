@@ -343,6 +343,8 @@ rosa que o Paulo escolheu para o app; o mesmo arquivo é o favicon dele
 (`Encaminha/src/app/icon.svg`). Rótulo "Médicos, enfermeiros e o Centro de Ginecologia":
 são os dois lados que entram — ACS e técnicos da unidade não têm conta lá.
 
+**Endereço provisório (21/09/2026).** O cartão apontava para `encaminha.guiaaps.com.br` de propósito, para a equipe não decorar o provisório — mas em 21/09 o CNAME ainda não existia no Registro.br e o link estava MORTO. Link morto é pior que endereço provisório, então href e rótulo passaram para `encaminha.vercel.app`. **Voltar aos dois para o definitivo assim que o DNS propagar.**
+
 **Selo "Em construção" (15/09/2026).** O Paulo pediu que o cartão avisasse que o app ainda não é
 para uso da rede: os 16 protocolos aguardam a revisão das especialistas, as contas das unidades
 e do Centro não foram criadas, e o DNS ainda não estava feito. O link continua vivo de propósito
