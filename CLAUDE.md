@@ -43,6 +43,15 @@ além de protocolo) e o endereço `documentos.guiaaps.com.br` também ficou como
 app e nome de infraestrutura são coisas separadas, e o porquê de cada peça que não foi
 renomeada está no `CLAUDE.md` daquele app, seção "O nome".
 
+**Desde 21/09/2026 a seção "Documentos" tem um segundo cartão: a Central de Documentos**
+(`central.saudesaomateusdosul.com.br`; enquanto o DNS não publica, o link aponta para o provisório
+`paulosgp.github.io/central-documentos` e é trocado depois, como foi com o Encaminha). É o acervo
+de modelos e formulários da SMS para **baixar** (memorando, ponto manual, férias…) — coisa que a
+equipe consulta, não sistema onde trabalha, e por isso entrou em "Documentos", ao lado dos
+Protocolos, e não em "Sistemas". Ícone `logo-central.svg` (pasta com seta para baixo), o mesmo
+arquivo que é o favicon do app. Com dois cartões de cada lado, o `.duplas` passou de 1/3 + 2/3
+para **metade a metade**. Desenho em `../CentralDocumentos/CLAUDE.md`.
+
 **E a seção "Prefeitura", desde 13/09/2026**, com os dois sistemas da Prefeitura (Oxy/Elotech):
 **Assinatura Digital** e **Processo Digital**. Entraram como seção própria, e não em "Sistemas",
 porque não são da Saúde nem do cuidado — são a papelada administrativa do município, que só parte
