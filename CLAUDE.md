@@ -44,8 +44,8 @@ app e nome de infraestrutura são coisas separadas, e o porquê de cada peça qu
 renomeada está no `CLAUDE.md` daquele app, seção "O nome".
 
 **Desde 21/09/2026 a seção "Documentos" tem um segundo cartão: a Central de Documentos**
-(`central.saudesaomateusdosul.com.br`; enquanto o DNS não publica, o link aponta para o provisório
-`paulosgp.github.io/central-documentos` e é trocado depois, como foi com o Encaminha). É o acervo
+(`central.saudesaomateusdosul.com.br`; apontou para o provisório `paulosgp.github.io/central-documentos`
+por algumas horas em 22/09/2026, até o CNAME publicar, como foi com o Encaminha). É o acervo
 de modelos e formulários da SMS para **baixar** (memorando, ponto manual, férias…) — coisa que a
 equipe consulta, não sistema onde trabalha, e por isso entrou em "Documentos", ao lado dos
 Protocolos, e não em "Sistemas". Ícone `logo-central.svg` (pasta com seta para baixo), o mesmo
