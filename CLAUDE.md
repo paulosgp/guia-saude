@@ -24,16 +24,24 @@ dele, o Planifica o dele, e o Guia Clínico não pede nenhum, por decisão antig
 ("sem cadastro nem chave"). Os rótulos **organizam, não trancam**: a página é pública, e
 quem digitar o endereço abre. Quem tranca é cada app.
 
-**Tem, desde 13/09/2026, a seção "Documentos"**, com um único cartão: o **Documentos
+**Tem, desde 13/09/2026, a seção "Documentos"**, com um único cartão: o **Protocolos
 Institucionais** (`documentos.guiaaps.com.br`), a busca nos protocolos, POPs, normas e
 rotinas, regimentos e planejamentos assinados. Ela entrou como **seção nova** (um `<h2>` e uma
 grade própria), e não como quinto bloco em "Sistemas", porque foi assim que ele decidiu quando
 deixou o espaço para depois: documento não é sistema onde a equipe trabalha, é o que a equipe
 consulta. O ícone `logo-documentos.svg` é nosso (folha com carimbo e lupa, nas cores do
 logotipo) — o app nasceu no mesmo dia e não tinha marca; o mesmo arquivo é o favicon dele
-(`Documentos Institucionais/src/app/icon.svg`). Rótulo "Toda a equipe": o app não pede senha, só
-o posto da pessoa. **Enquanto o DNS e a Vercel não estiverem configurados pelo Paulo**, o link
-leva a lugar nenhum — o cartão foi posto antes por pedido dele.
+(`Documentos Institucionais/src/app/icon.svg` — a pasta local guardou o
+nome antigo). Rótulo "Toda a equipe": o app não pede senha, só o posto da pessoa. O cartão foi
+posto no ar antes do app existir, por pedido dele, e apontou para lugar nenhum até o DNS e a
+Vercel serem configurados — o que saiu no mesmo 13/09/2026.
+
+**O cartão dizia "Documentos Institucionais" até 21/09/2026**, quando o Paulo renomeou o app
+para **Protocolos Institucionais**. Mudou só o nome impresso no cartão: o `<h2>` da seção
+continua "Documentos" (é a categoria, e o acervo tem POPs, normas, regimentos e planejamentos
+além de protocolo) e o endereço `documentos.guiaaps.com.br` também ficou como estava — nome de
+app e nome de infraestrutura são coisas separadas, e o porquê de cada peça que não foi
+renomeada está no `CLAUDE.md` daquele app, seção "O nome".
 
 **E a seção "Prefeitura", desde 13/09/2026**, com os dois sistemas da Prefeitura (Oxy/Elotech):
 **Assinatura Digital** e **Processo Digital**. Entraram como seção própria, e não em "Sistemas",
