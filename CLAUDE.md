@@ -24,9 +24,10 @@ dele, o Planifica o dele, e o Guia Clínico não pede nenhum, por decisão antig
 ("sem cadastro nem chave"). Os rótulos **organizam, não trancam**: a página é pública, e
 quem digitar o endereço abre. Quem tranca é cada app.
 
-**Tem, desde 13/09/2026, a seção "Documentos"**, com um único cartão: o **Protocolos
-Institucionais** (`documentos.guiaaps.com.br`), a busca nos protocolos, POPs, normas e
-rotinas, regimentos e planejamentos assinados. Ela entrou como **seção nova** (um `<h2>` e uma
+**Tem, desde 13/09/2026, a seção "Documentos"** — hoje com dois cartões (o segundo está
+logo abaixo). Nasceu com um só: o **Protocolos Institucionais**
+(`documentos.guiaaps.com.br`), a busca nos protocolos, POPs, normas e rotinas, regimentos e
+planejamentos assinados. Ela entrou como **seção nova** (um `<h2>` e uma
 grade própria), e não como quinto bloco em "Sistemas", porque foi assim que ele decidiu quando
 deixou o espaço para depois: documento não é sistema onde a equipe trabalha, é o que a equipe
 consulta. O ícone `logo-documentos.svg` é nosso (folha com carimbo e lupa, nas cores do
@@ -38,10 +39,13 @@ Vercel serem configurados — o que saiu no mesmo 13/09/2026.
 
 **O cartão dizia "Documentos Institucionais" até 21/09/2026**, quando o Paulo renomeou o app
 para **Protocolos Institucionais**. Mudou só o nome impresso no cartão: o `<h2>` da seção
-continua "Documentos" (é a categoria, e o acervo tem POPs, normas, regimentos e planejamentos
-além de protocolo) e o endereço `documentos.guiaaps.com.br` também ficou como estava — nome de
-app e nome de infraestrutura são coisas separadas, e o porquê de cada peça que não foi
-renomeada está no `CLAUDE.md` daquele app, seção "O nome".
+continua "Documentos" — o Paulo chegou a pedir "Protocolos" ali também, em 22/09/2026, e
+recuou ao ver que a seção já tinha ganhado o cartão da Central de Documentos: o `<h2>` é o nome
+da PRATELEIRA, e ela hoje guarda dois sistemas diferentes, um só dos quais é de protocolo (o
+motivo anterior continua valendo por dentro: nem o acervo do app é só protocolo — tem POPs,
+normas, regimentos e planejamentos). O endereço `documentos.guiaaps.com.br` também ficou como
+estava — nome de app e nome de infraestrutura são coisas separadas, e o porquê de cada peça que
+não foi renomeada está no `CLAUDE.md` daquele app, seção "O nome".
 
 **Desde 21/09/2026 a seção "Documentos" tem um segundo cartão: a Central de Documentos**
 (`central.saudesaomateusdosul.com.br`; apontou para o provisório `paulosgp.github.io/central-documentos`
