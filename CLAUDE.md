@@ -86,6 +86,7 @@ mandaria todo mundo à caixa de um setor só, e quebraria na virada do ano.
 | SIGSS | Toda a equipe | `c3102prd.cloudmv.com.br` |
 | AvaliaACS | Enfermeiros e coordenação | `avalia-acs.web.app` |
 | Guia Clínico APS | Enfermeiros e médicos | `guiaclinicoaps.github.io` |
+| RH Saúde | Todos os servidores da Saúde | `rh.saudesaomateusdosul.com.br` |
 | Assinatura Digital | Quem assina documento | `saomateusdosul.oxy.elotech.com.br` |
 | Processo Digital | Coordenação e chefias | `saomateusdosul.oxy.elotech.com.br` |
 
@@ -377,3 +378,22 @@ a borda tracejada (`.app.construcao`) e a frase final da descrição, "aguarde o
 coordenação antes de usar". O âmbar é deliberado: o chip verde já significa "quem usa", e um
 aviso da mesma cor passaria batido. Quando o app for liberado, remover as três coisas — o selo,
 a classe `construcao` e a frase — e nada mais.
+
+## RH Saúde (cartão desde 28/09/2026)
+
+Sexto cartão de "Sistemas", pedido pelo Paulo durante o teste de tela do app em produção (*"Coloque o
+link no guia saude com o selo de em construção"*). É o sistema de RH da Secretaria, que começa pelas
+férias (intenção, parecer da chefia, decisão da coordenação e o formulário oficial já preenchido) e
+vai ganhar outros formulários; a descrição diz "começando pelas férias" de propósito, porque o
+próprio app deixou de se apresentar como "de férias" (ver o `CLAUDE.md` do RH Saúde, "Próximas
+partes"). Leva a `rh.saudesaomateusdosul.com.br`, que já responde com certificado desde 27/09/2026.
+
+- **No FIM de "Sistemas", não ao lado do Planifica**: enquanto está em construção, ele não empurra
+  de lugar os cartões que a equipe já sabe onde ficam. Quando for liberado, dá para subir.
+- **"Todos os servidores da Saúde"** e não "Toda a equipe": o app é da Secretaria inteira (Farmácia,
+  Vigilância, CAPS, Pronto Atendimento…), não só das unidades da APS.
+- **Ícone `logo-rh.svg`**: é o `Sistemas RH/src/app/icon.svg`, o favicon do app (quadrado azul com
+  "RH"), copiado como os outros.
+- **Selo "Em construção" igual ao do Encaminha** (as três peças: o `<span class="selo">`, a classe
+  `construcao` e a frase "Ainda em preparação: aguarde o aviso da coordenação antes de usar."). O
+  link fica vivo, para quem for testar. Quando o app for liberado, remover as três e nada mais.
