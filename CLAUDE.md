@@ -365,9 +365,9 @@ rosa que o Paulo escolheu para o app; o mesmo arquivo é o favicon dele
 (`Encaminha/src/app/icon.svg`). Rótulo "Médicos, enfermeiros e o Centro de Ginecologia":
 são os dois lados que entram — ACS e técnicos da unidade não têm conta lá.
 
-**O endereço definitivo passou a funcionar em 21/09/2026**, quando o CNAME `encaminha` foi criado na zona de `guiaaps.com.br` e propagou. Durante algumas horas daquele dia o cartão apontou para `encaminha.vercel.app`, porque o link definitivo estava morto — link morto é pior que endereço provisório. Já voltou para `encaminha.guiaaps.com.br`.
+**O endereço definitivo passou a funcionar em 21/09/2026**, quando o CNAME `encaminha` foi criado na zona de `guiaaps.com.br` e propagou. Durante algumas horas daquele dia o cartão apontou para `encaminha.vercel.app`, porque o link definitivo estava morto — link morto é pior que endereço provisório. Este arquivo chegou a dizer que o cartão já tinha voltado, mas o `index.html` continuou no provisório até **28/09/2026**, quando a volta foi feita de fato, com o OK do Paulo (conferido antes: a raiz responde 307 para `/login`, que abre com 200).
 
-**Endereço provisório (21/09/2026).** O cartão apontava para `encaminha.guiaaps.com.br` de propósito, para a equipe não decorar o provisório — mas em 21/09 o CNAME ainda não existia no Registro.br e o link estava MORTO. Link morto é pior que endereço provisório, então href e rótulo passaram para `encaminha.vercel.app`. **Voltar aos dois para o definitivo assim que o DNS propagar.**
+**Endereço provisório (21/09/2026).** O cartão apontava para `encaminha.guiaaps.com.br` de propósito, para a equipe não decorar o provisório — mas em 21/09 o CNAME ainda não existia no Registro.br e o link estava MORTO. Link morto é pior que endereço provisório, então href e rótulo passaram para `encaminha.vercel.app`. Os dois voltaram para o definitivo em 28/09/2026 (ver acima).
 
 **Selo "Em construção" (15/09/2026).** O Paulo pediu que o cartão avisasse que o app ainda não é
 para uso da rede: os 16 protocolos aguardam a revisão das especialistas, as contas das unidades
