@@ -398,15 +398,22 @@ partes"). Leva a `rh.saudesaomateusdosul.com.br`, que já responde com certifica
   `construcao` e a frase "Ainda em preparação: aguarde o aviso da coordenação antes de usar."). O
   link fica vivo, para quem for testar. Quando o app for liberado, remover as três e nada mais.
 
-## Fluxograma Fácil (cartão desde 30/09/2026)
+## Fluxograma Fácil e a seção "Ferramentas" (30/09/2026)
 
-Sétimo cartão de "Sistemas", pedido pelo Paulo (*"Coloque no Guia saude"*). É o editor de
-fluxograma em branco que ele fez para os municípios da 6ª Regional montarem o fluxo do plano de
-contingência das arboviroses. Detalhes no `CLAUDE.md` do app, em `Fluxograma Facil`. Leva a
-`fluxograma.guiaaps.com.br`, que responde com certificado desde 30/09/2026.
+Pedido do Paulo (*"Coloque no Guia saude"*). É o editor de fluxograma em branco que ele fez para os
+municípios da 6ª Regional montarem o fluxo do plano de contingência das arboviroses. Detalhes no
+`CLAUDE.md` do app, em `Fluxograma Facil`. Leva a `fluxograma.guiaaps.com.br`, que responde com
+certificado desde 30/09/2026.
 
-- **No FIM de "Sistemas", como o RH Saúde:** não é de uso diário da unidade, então não empurra de
-  lugar os cartões que a equipe já sabe onde ficam.
+- **Seção própria, "Ferramentas", e não "Sistemas".** O cartão entrou primeiro no fim de "Sistemas", e
+  o Paulo tirou no mesmo dia: *"Eu não quero que ele fique na parte de sistemas... que tal uma parte
+  nova chamada ferramentas"*. Fica a distinção: **sistema** é onde a equipe trabalha no dia a dia
+  (Planifica, SIGSS...); **ferramenta** é algo que se usa de vez em quando para produzir alguma coisa.
+- **"Ferramentas" fica no FIM da página, depois de Documentos e Prefeitura.** Nada do que a equipe já
+  sabe onde fica muda de lugar, e a seção nova não empurra "Prefeitura" para baixo.
+- **`.apps.sozinhos` usa `auto-fill`.** Com o `auto-fit` do `.apps`, um cartão sozinho esticava na
+  largura toda. O `auto-fill` guarda as colunas vazias, e ele fica com os mesmos 254 px dos outros no
+  notebook. Cabe mais ferramenta na mesma fileira quando vier.
 - **"Coordenação e enfermeiros":** são eles que montam fluxos (o do plano de contingência, ou o de
   uma rotina da unidade). O app não tem login, e qualquer um pode abrir.
 - **Sem selo "Em construção":** o app estava pronto e publicado, com manual, quando o cartão entrou.
