@@ -397,3 +397,18 @@ partes"). Leva a `rh.saudesaomateusdosul.com.br`, que já responde com certifica
 - **Selo "Em construção" igual ao do Encaminha** (as três peças: o `<span class="selo">`, a classe
   `construcao` e a frase "Ainda em preparação: aguarde o aviso da coordenação antes de usar."). O
   link fica vivo, para quem for testar. Quando o app for liberado, remover as três e nada mais.
+
+## Fluxograma Fácil (cartão desde 30/09/2026)
+
+Sétimo cartão de "Sistemas", pedido pelo Paulo (*"Coloque no Guia saude"*). É o editor de
+fluxograma em branco que ele fez para os municípios da 6ª Regional montarem o fluxo do plano de
+contingência das arboviroses. Detalhes no `CLAUDE.md` do app, em `Fluxograma Facil`. Leva a
+`fluxograma.guiaaps.com.br`, que responde com certificado desde 30/09/2026.
+
+- **No FIM de "Sistemas", como o RH Saúde:** não é de uso diário da unidade, então não empurra de
+  lugar os cartões que a equipe já sabe onde ficam.
+- **"Coordenação e enfermeiros":** são eles que montam fluxos (o do plano de contingência, ou o de
+  uma rotina da unidade). O app não tem login, e qualquer um pode abrir.
+- **Sem selo "Em construção":** o app estava pronto e publicado, com manual, quando o cartão entrou.
+- **O ícone `logo-fluxograma.svg`** é o favicon do próprio app (quadrado azul com losango e seta),
+  copiado como os outros.
