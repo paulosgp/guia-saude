@@ -24,6 +24,15 @@ dele, o Planifica o dele, e o Guia Clínico não pede nenhum, por decisão antig
 ("sem cadastro nem chave"). Os rótulos **organizam, não trancam**: a página é pública, e
 quem digitar o endereço abre. Quem tranca é cada app.
 
+**Isso vai mudar (decidido em 01/10/2026).** O Guia Saúde vai virar o **guarda-chuva** de todos
+os sistemas, com a **conta do Guia Saúde**: um login só para os sistemas conectados (Planifica,
+Encaminha, RH Saúde, Notificação Compulsória) e, depois do login, uma tela inicial com "Seus
+sistemas" e a Trilha de Integração. A parte pública continua, para quem não tem conta, e os
+sistemas abertos (Guia Clínico, Protocolos, Central, Fluxograma) continuam sem login. O porquê, o
+vocabulário e a ordem estão na seção "O guarda-chuva: Guia Saúde e a conta única", no
+[CLAUDE.md da pasta raiz](../CLAUDE.md). **Até a conta existir, esta página continua estática e
+pública, e tudo o que está escrito abaixo continua valendo.**
+
 **Tem, desde 13/09/2026, a seção "Documentos"** — hoje com dois cartões (o segundo está
 logo abaixo). Nasceu com um só: o **Protocolos Institucionais**
 (`documentos.guiaaps.com.br`), a busca nos protocolos, POPs, normas e rotinas, regimentos e
@@ -419,3 +428,15 @@ certificado desde 30/09/2026.
 - **Sem selo "Em construção":** o app estava pronto e publicado, com manual, quando o cartão entrou.
 - **O ícone `logo-fluxograma.svg`** é o favicon do próprio app (quadrado azul com losango e seta),
   copiado como os outros.
+
+## Organograma da Saúde em "Documentos" (18/10/2026)
+
+Pedido do Paulo (respondeu "quero sim" ao cartão). Leva a `organograma.saudesaomateusdosul.com.br`, no
+ar com certificado desde 18/10/2026. Detalhes no `CLAUDE.md` do app, em `Organograma da saude`.
+
+- **Em "Documentos", e não em "Ferramentas" nem em "Sistemas".** Pela distinção do Fluxograma, não é
+  sistema (onde se trabalha no dia a dia) nem ferramenta (algo que se usa para produzir). É material de
+  consulta, como os protocolos e os modelos. Se o Paulo preferir outro lugar, é só mover o bloco.
+- **"Toda a equipe e o cidadão":** o app tem a chave "Sou cidadão / Sou da equipe" e não tem login.
+- **O ícone `logo-organograma.svg`** foi desenhado para o cartão (quadrado verde-azulado com um
+  organograma de três caixas), porque o app usa os ícones do próprio Guia Saúde.
