@@ -440,3 +440,7 @@ ar com certificado desde 18/10/2026. Detalhes no `CLAUDE.md` do app, em `Organog
 - **"Toda a equipe e o cidadão":** o app tem a chave "Sou cidadão / Sou da equipe" e não tem login.
 - **O ícone `logo-organograma.svg`** foi desenhado para o cartão (quadrado verde-azulado com um
   organograma de três caixas), porque o app usa os ícones do próprio Guia Saúde.
+- **Selo "Em construção" desde 23/10/2026**, a pedido do Paulo: o mesmo `selo` e a borda tracejada
+  (`app construcao`) do Encaminha e do RH Saúde. O link continua aberto e a descrição não mudou. Tirar o
+  selo é tirar a classe `construcao` e o `<span class="selo">` do cartão. A cópia desta página dentro do
+  app do Guia (`Guia Saude App/src/publico/index.html`) ainda não tem o cartão do Organograma.
