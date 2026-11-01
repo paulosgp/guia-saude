@@ -96,6 +96,10 @@ mandaria todo mundo à caixa de um setor só, e quebraria na virada do ano.
 | AvaliaACS | Enfermeiros e coordenação | `avalia-acs.web.app` |
 | Guia Clínico APS | Enfermeiros e médicos | `guiaclinicoaps.github.io` |
 | RH Saúde | Todos os servidores da Saúde | `rh.saudesaomateusdosul.com.br` |
+| Notificação Compulsória | Quem notifica e a Vigilância Epidemiológica | `notifica.saudesaomateusdosul.com.br` |
+| Diário de Bordo | Quem dirige os carros das unidades e o setor de transportes | `bordo.saudesaomateusdosul.com.br` |
+| Avalia Saúde | Coordenação e Ouvidoria | `avalia.saudesaomateusdosul.com.br/painel` |
+| Almoxarifado | O almoxarifado e os setores da Saúde | `almoxarifado.saudesaomateusdosul.com.br` |
 | Assinatura Digital | Quem assina documento | `saomateusdosul.oxy.elotech.com.br` |
 | Processo Digital | Coordenação e chefias | `saomateusdosul.oxy.elotech.com.br` |
 
@@ -444,3 +448,22 @@ ar com certificado desde 18/10/2026. Detalhes no `CLAUDE.md` do app, em `Organog
   (`app construcao`) do Encaminha e do RH Saúde. O link continua aberto e a descrição não mudou. Tirar o
   selo é tirar a classe `construcao` e o `<span class="selo">` do cartão. A cópia desta página dentro do
   app do Guia (`Guia Saude App/src/publico/index.html`) ainda não tem o cartão do Organograma.
+
+## Notificação Compulsória, Diário de Bordo, Avalia Saúde e Almoxarifado (02/11/2026)
+
+Pedido do Paulo (*"Coloca ele na pilha de sistemas com o selo em construção. Veja se tem mais algum sistema de fora e já
+coloque lá também"*), no dia em que o Almoxarifado foi ao ar. Os quatro sistemas conectados do Guia que estavam no ar e
+faltavam na página entraram no FIM de "Sistemas", depois do RH Saúde, todos com o **selo "Em construção"** (as três peças do
+Encaminha e do RH: o `<span class="selo">`, a classe `construcao` e a frase "Ainda em preparação: aguarde o aviso da
+coordenação antes de usar."), porque nenhum foi divulgado à rede (o lançamento é em 2027).
+
+- **O Avalia Saúde aponta para `/painel`** (o que a equipe usa); a raiz do endereço é a avaliação do paciente, que chega pelo
+  QR do cartaz, não por esta página.
+- **Os ícones:** `logo-notificacao.svg` e `logo-diario.svg` são os favicons dos apps (`Notificação Compulsoria/src/app/icon.svg`
+  e `Diario de Bordo/public/icone.svg`); `logo-avalia.svg` ("AV", azul) e `logo-almoxarifado.svg` ("AL", âmbar escuro) foram
+  desenhados no mesmo molde (quadrado com as iniciais), porque os dois apps não têm ícone próprio.
+- **Ficaram de fora de propósito:** o Painel de Pendências (da coordenação, compartilhado por link), os apps que não são da
+  Saúde (Sandis, Fluxo de Caixa, MinhasHoras/Meu Uber) e a própria conta do Guia (`guia-saude-app.vercel.app`, que vai assumir
+  este endereço na parte 7).
+- A cópia desta página dentro do app do Guia (`Guia Saude App/src/publico/index.html`) ainda não tem estes quatro cartões.
+- Tirar o selo de um deles, quando for liberado: tirar a classe `construcao` e o `<span class="selo">`, e a frase do fim da descrição.
