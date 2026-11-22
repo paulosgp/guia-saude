@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#1d6fa5"/><text x="32" y="41" font-family="Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle" fill="#fff">AV</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Avalia Saúde">
+  <!-- Ícone do Avalia Saúde (22/11/2026, no lugar das iniciais "AS"): o balão da opinião do paciente com a estrela da
+       nota, no verde do app (#0b7a3e). O mesmo desenho está no Guia, em public/logo-avalia.svg: mudou um, mude o outro. -->
+  <rect width="64" height="64" rx="14" fill="#0b7a3e"/>
+  <path d="M21 12h22a9 9 0 0 1 9 9v13a9 9 0 0 1-9 9H31l-10 9v-9a9 9 0 0 1-9-9V21a9 9 0 0 1 9-9z" fill="#ffffff"/>
+  <path d="M32 18l2.6 6.9 7.4.4-5.8 4.6 2 7.1-6.2-4.1-6.2 4.1 2-7.1-5.8-4.6 7.4-.4z" fill="#f2b01e" stroke="#f2b01e" stroke-width="1.6" stroke-linejoin="round"/>
+</svg>
