@@ -93,7 +93,6 @@ mandaria todo mundo à caixa de um setor só, e quebraria na virada do ano.
 |---|---|---|
 | Planifica Fácil | **Equipe da unidade** | `planifica.guiaaps.com.br` |
 | SIGSS | Toda a equipe | `c3102prd.cloudmv.com.br` |
-| AvaliaACS | Enfermeiros e coordenação | `avalia-acs.web.app` |
 | Guia Clínico APS | Enfermeiros e médicos | `guiaclinicoaps.github.io` |
 | RH Saúde | Todos os servidores da Saúde | `rh.saudesaomateusdosul.com.br` |
 | Notificação Compulsória | Quem notifica e a Vigilância Epidemiológica | `notifica.saudesaomateusdosul.com.br` |
@@ -127,7 +126,10 @@ pode envelhecer junto.
 - **Cada bloco mostra o logotipo do próprio sistema** (pedido do Paulo em 13/09/2026, "coloque a
   logo de cada app"). Os três nossos saíram da pasta de cada um — `logo-planifica.png` (o ícone do
   PWA, `Planifica Facil/public/icons/icon-192.png`), `logo-avaliaacs.svg` (`AvaliaACS/public/icon.svg`)
-  e `logo-guiaclinico.png` (`GuiaClinico/_logo/icone_96.png`).
+  e `logo-guiaclinico.png` (`GuiaClinico/_logo/icone_96.png`). **O cartão do AvaliaACS saiu da página em 22/11/2026**
+  (pedido do Paulo, "Retire daqui"): desde 11/10/2026 ele só avisava que a avaliação das ACS mudou para o Planifica, e o
+  AvaliaACS foi aposentado de vez (Firestore apagado, repositório arquivado). Saíram junto o `logo-avaliaacs.svg` e a
+  menção na descrição da página e no cartaz.
 - **O do SIGSS veio DELE, e é por isso que ele está aqui.** Na primeira versão o SIGSS ficou com um
   quadrado verde desenhado, porque é sistema de terceiro (cloudMV) e baixar a marca de outra empresa
   para hospedar na nossa página não é coisa que se faça sem perguntar. Ele viu a página e mandou o
