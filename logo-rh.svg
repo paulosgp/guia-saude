@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#26408a"/><text x="32" y="41" font-family="Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle" fill="#fff">RH</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="RH Saúde">
+  <!-- Ícone do RH Saúde (22/11/2026, escolhido pelo Paulo entre três, no lugar das letras "RH"): o crachá do servidor,
+       no azul do app, com o selo verde da Secretaria (#0b7a3e, o mesmo do Almoxarifado). O mesmo desenho no favicon
+       (src/app/icon.svg), no Guia (public/logo-rh.svg) e no GuiaSaude (logo-rh.svg): mudou um, mude os outros. -->
+  <defs>
+    <linearGradient id="rh-fundo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4a6fd4"/>
+      <stop offset="1" stop-color="#1b2a55"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#rh-fundo)"/>
+  <rect x="14" y="12" width="34" height="41" rx="5" fill="#ffffff"/>
+  <rect x="24" y="7" width="14" height="8" rx="3" fill="#d6e0f7" stroke="#1b2a55" stroke-width="2"/>
+  <circle cx="31" cy="27" r="6.2" fill="#4a6fd4"/>
+  <path d="M20.5 42a10.5 9 0 0 1 21 0z" fill="#4a6fd4"/>
+  <path d="M21 47.5h12" fill="none" stroke="#c3d0f0" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="48.5" cy="48.5" r="10" fill="#0b7a3e" stroke="#ffffff" stroke-width="2.6"/>
+  <path d="M43.8 48.6L47.2 52L53.4 45.6" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

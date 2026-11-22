@@ -405,8 +405,9 @@ partes"). Leva a `rh.saudesaomateusdosul.com.br`, que já responde com certifica
   de lugar os cartões que a equipe já sabe onde ficam. Quando for liberado, dá para subir.
 - **"Todos os servidores da Saúde"** e não "Toda a equipe": o app é da Secretaria inteira (Farmácia,
   Vigilância, CAPS, Pronto Atendimento…), não só das unidades da APS.
-- **Ícone `logo-rh.svg`**: é o `Sistemas RH/src/app/icon.svg`, o favicon do app (quadrado azul com
-  "RH"), copiado como os outros.
+- **Ícone `logo-rh.svg`**: é o `Sistemas RH/src/app/icon.svg`, o favicon do app, copiado como os outros.
+  Desde 22/11/2026 é o crachá do servidor com o selo verde (escolhido pelo Paulo entre três), no lugar do
+  quadrado azul com "RH".
 - **Selo "Em construção" igual ao do Encaminha** (as três peças: o `<span class="selo">`, a classe
   `construcao` e a frase "Ainda em preparação: aguarde o aviso da coordenação antes de usar."). O
   link fica vivo, para quem for testar. Quando o app for liberado, remover as três e nada mais.
