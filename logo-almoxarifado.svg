@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#8a5a14"/><text x="32" y="41" font-family="Arial, sans-serif" font-size="24" font-weight="800" text-anchor="middle" fill="#fff">AL</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Almoxarifado">
+  <!-- Ícone do Almoxarifado (22/11/2026, no lugar das iniciais "AL"): a caixa de material fechada com a fita, no âmbar do
+       cartão, e o selo verde da entrega (o verde da Secretaria, #0b7a3e). O mesmo desenho está no Guia
+       (public/logo-almoxarifado.svg) e no GuiaSaude (logo-almoxarifado.svg): mudou um, mude os outros. -->
+  <defs><linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c7871f"/><stop offset="1" stop-color="#7a4b0e"/></linearGradient></defs>
+  <rect width="64" height="64" rx="14" fill="url(#fundo)"/>
+  <path d="M32 11L52 20L32 29L12 20Z" fill="#fff4de"/>
+  <path d="M12 20L32 29V53L12 44Z" fill="#ffffff"/>
+  <path d="M32 29L52 20V44L32 53Z" fill="#f1d7a6"/>
+  <path d="M20 16.4L24 14.6L44 23.6L40 25.4Z" fill="#b5761a"/>
+  <path d="M40 25.4L44 23.6V46.6L40 48.4Z" fill="#b5761a"/>
+  <path d="M16 30.3L26 34.8V38.4L16 33.9Z" fill="#c7871f" opacity=".55"/>
+  <circle cx="48.5" cy="48.5" r="10" fill="#0b7a3e" stroke="#ffffff" stroke-width="2.6"/>
+  <path d="M43.8 48.6L47.2 52L53.4 45.6" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

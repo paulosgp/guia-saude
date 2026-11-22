@@ -460,12 +460,13 @@ coordenação antes de usar."), porque nenhum foi divulgado à rede (o lançamen
 - **O Avalia Saúde aponta para `/painel`** (o que a equipe usa); a raiz do endereço é a avaliação do paciente, que chega pelo
   QR do cartaz, não por esta página.
 - **Os ícones:** `logo-notificacao.svg` e `logo-diario.svg` são os favicons dos apps (`Notificação Compulsoria/src/app/icon.svg`
-  e `Diario de Bordo/public/icone.svg`); `logo-avalia.svg` ("AV", azul) e `logo-almoxarifado.svg` ("AL", âmbar escuro) foram
-  desenhados no mesmo molde (quadrado com as iniciais), porque os dois apps não têm ícone próprio.
+  e `Diario de Bordo/public/icone.svg`). `logo-avalia.svg` e `logo-almoxarifado.svg` nasceram com as iniciais ("AV", "AL") e
+  ganharam desenho em 22/11/2026 (o Paulo achou o "AL" feio): o Avalia, o balão com a estrela (o ícone do app); o Almoxarifado, a
+  caixa de material com a fita, no âmbar, e o selo verde da entrega, que é também o ícone do app (`Almoxarifado/src/app/icon.svg`).
+  Mudou lá, copie aqui e no Guia (`Guia Saude App/public/`).
 - **Ficaram de fora de propósito:** o Painel de Pendências (da coordenação, compartilhado por link), os apps que não são da
   Saúde (Sandis, Fluxo de Caixa, MinhasHoras/Meu Uber) e a própria conta do Guia (`guia-saude-app.vercel.app`, que vai assumir
   este endereço na parte 7).
 - A cópia desta página dentro do app do Guia (`Guia Saude App/src/publico/index.html`) foi refeita em 22/11/2026 com estes quatro
-  cartões (e o do Organograma), os logos em `public/` de lá e em `src/lib/sistemas.ts`. **O `logo-avalia.svg` do Guia é o ícone
-  novo do Avalia** (22/11/2026, feito pela sessão do Avalia); o daqui ainda é o "AV" de 02/11/2026.
+  cartões (e o do Organograma), os logos em `public/` de lá e em `src/lib/sistemas.ts`.
 - Tirar o selo de um deles, quando for liberado: tirar a classe `construcao` e o `<span class="selo">`, e a frase do fim da descrição.
