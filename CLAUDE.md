@@ -447,7 +447,7 @@ ar com certificado desde 18/10/2026. Detalhes no `CLAUDE.md` do app, em `Organog
 - **Selo "Em construção" desde 23/10/2026**, a pedido do Paulo: o mesmo `selo` e a borda tracejada
   (`app construcao`) do Encaminha e do RH Saúde. O link continua aberto e a descrição não mudou. Tirar o
   selo é tirar a classe `construcao` e o `<span class="selo">` do cartão. A cópia desta página dentro do
-  app do Guia (`Guia Saude App/src/publico/index.html`) ainda não tem o cartão do Organograma.
+  app do Guia (`Guia Saude App/src/publico/index.html`) ganhou o cartão em 22/11/2026.
 
 ## Notificação Compulsória, Diário de Bordo, Avalia Saúde e Almoxarifado (02/11/2026)
 
@@ -465,5 +465,7 @@ coordenação antes de usar."), porque nenhum foi divulgado à rede (o lançamen
 - **Ficaram de fora de propósito:** o Painel de Pendências (da coordenação, compartilhado por link), os apps que não são da
   Saúde (Sandis, Fluxo de Caixa, MinhasHoras/Meu Uber) e a própria conta do Guia (`guia-saude-app.vercel.app`, que vai assumir
   este endereço na parte 7).
-- A cópia desta página dentro do app do Guia (`Guia Saude App/src/publico/index.html`) ainda não tem estes quatro cartões.
+- A cópia desta página dentro do app do Guia (`Guia Saude App/src/publico/index.html`) foi refeita em 22/11/2026 com estes quatro
+  cartões (e o do Organograma), os logos em `public/` de lá e em `src/lib/sistemas.ts`. **O `logo-avalia.svg` do Guia é o ícone
+  novo do Avalia** (22/11/2026, feito pela sessão do Avalia); o daqui ainda é o "AV" de 02/11/2026.
 - Tirar o selo de um deles, quando for liberado: tirar a classe `construcao` e o `<span class="selo">`, e a frase do fim da descrição.
